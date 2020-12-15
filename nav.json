@@ -38,5 +38,10 @@
         "name": "Lab 5",
         "file": "lab5",
         "showSmall": "true"
+    },
+    {
+        "name": "Showcase",
+        "file": "showcase",
+        "showSmall": "false"
     }
 ]
