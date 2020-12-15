@@ -4,9 +4,13 @@
 
 ::: Materials
 - Computer
+    - We recommend using VS code with the Live Server extension
+    - Optionally, you should install the Spell Right extension to catch typos in markdown files
+        - Unless you are Louis, of course 😉
 - Brains
-  - Hopefully you have these handy! If not, go find them!
-- Grit
+  - Hopefully you have these handy! 
+- Patience
+  - It's a virtue, you know
 :::
 
 ### Material List

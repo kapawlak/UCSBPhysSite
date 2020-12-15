@@ -93,6 +93,12 @@
 .Materials header{
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  
+}
+
+.Materials header h3{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
 }
 
 .Materials ul > li::before{
