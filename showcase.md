@@ -422,16 +422,14 @@ HTML is enabled in this markdown compiler, so if you need to include something b
 
 # Conclusion
 
+## Add a Summary
 
-::::::row w3-center w3-card-2 w3-flat-clouds
-### **In this lab, there were:**
-:::col l6 m6 s12
- @fa-question-circle qtotal w3-hover-shadow@ 
+```
+::: Summary
+Please turn in your report [here](https://gauchospace.ucsb.edu/courses/my/)
 :::
-:::col l6 m6 s12
- @fa-pencil-square-o etotal w3-hover-shadow@
+```
+
+::: Summary
+Please turn in your report [here](https://gauchospace.ucsb.edu/courses/my/)
 :::
-### **@fa-hand-o-right@ Please be sure to complete all questions and exercises @fa-hand-o-left@**
-::::::
-
-

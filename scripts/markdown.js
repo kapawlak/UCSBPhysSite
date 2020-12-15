@@ -216,6 +216,20 @@ render: function (tokens, idx) {
 }
 });
 
+
+md.use(container , 'Summary',
+{
+render: function (tokens, idx) {
+    if (tokens[idx].nesting === 1) {
+    // opening tag
+    return summary;
+
+}else{
+    return '</div>'
+}
+}
+});
+
 function doRendering(md_text){ 
     var markdown = md_text;
     return md.render(markdown);

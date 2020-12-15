@@ -118,6 +118,10 @@
   margin: 5px;
   font-size: smaller!important;
 }
+
+.Summary{
+  margin: 30px ;
+}
 /*********************************************************************************/
 /* Equation box formats */
 .Equation{

@@ -184,3 +184,6 @@ function replace_icon(){
     
 }
 }
+
+
+const summary = '<div class=" Summary w3-row  w3-center w3-card-2 w3-flat-clouds"><h3><strong>In this lab, there were:</strong></h3><div class="w3-col s12 l6 m6 s12"><p><i class="fa fa-question-circle qtotal w3-hover-shadow"></i></p></div><div class="w3-col s12 l6 m6 s12"><p><i class="fa fa-pencil-square-o etotal w3-hover-shadow"></i></p></div><h3><strong><i class="fa fa-hand-o-right"></i> Please be sure to complete all questions and exercises <i class="fa fa-hand-o-left"></i></strong></h3><br>'
