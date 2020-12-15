@@ -1,20 +1,30 @@
 # First header: is the title
 
+
+
+::: Materials
+- Computer
+- Brains
+  - Hopefully you have these handy! If not, go find them!
+- Grit
+:::
+
 ### Material List
 Generate your Material List
 
 ``` 
 ::: Materials 
-- item1
+- item 1
 - item 2
+  - note for item 2
 - item 3
 :::
 ```
-
-::: Materials
-- Computer
-- Brains
-- Grit
+::: Materials 
+- item 1
+- item 2
+  - note for item 2
+- item 3
 :::
 
 

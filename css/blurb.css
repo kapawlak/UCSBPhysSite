@@ -86,11 +86,37 @@
 .Materials{
     margin: 30px;
     border-radius: 5px!important;
+    display: inline-block;
+    min-width: 30%;
  }
 
- .Materials header{
+.Materials header{
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.Materials ul > li::before{
+  content: '\f046  ';
+  font-family: FontAwesome!important;
+  margin: 5px
+}
+
+.Materials ul > li > ul > li::before{
+  content: '\f054   ';
+  font-family: FontAwesome!important;
+  margin: 5px;
+  font-size: 80%!important;
+}
+
+.Materials ul > li{
+  margin: 10px;
+  list-style-type: none;
+  
+}
+
+.Materials ul > li > ul > li{
+  margin: 5px;
+  font-size: smaller!important;
 }
 /*********************************************************************************/
 /* Equation box formats */
