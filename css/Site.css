@@ -397,13 +397,15 @@ text-align: center;
 
 .qtotal{
   background-color: #009688;
-  margin:auto;
+  margin:10px auto;
   align-content: center;
+  width: 80%;
 } 
 .etotal{
   background-color: rgb(121, 121, 121);
-  margin:auto;
+  margin: 10px auto;
   align-content: center;
+  width: 80%;
 }
 
 
