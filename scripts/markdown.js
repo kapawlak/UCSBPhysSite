@@ -107,7 +107,7 @@ md.use(container,'Warning',{
     
         }else{
         // This places a closing tag
-        return '<h5 class="clickwarning">Click to Acknowledge</h3>'+ postamble + '</div>'
+        return '<h5 class="clickwarning"></h3>'+ postamble + '</div>'
         }
         }
     })
