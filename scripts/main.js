@@ -92,7 +92,6 @@ function htmltweaks() {
   eqlist=document.getElementsByClassName('Equation')
   for(i=0;i<eqlist.length;i++){
     EqList[i]=eqlist[i].id
-    console.log(EqList)
   }
 
  

@@ -165,15 +165,12 @@ md.use(container , 'col',{
 
     render: function (tokens, idx) {
         var m = tokens[idx].info.trim().match(/^col(.*)$/);
-        console.log(m)
-        if (tokens[idx].nesting === 1) {
-        
-        // opening tag
-        return '<div class="w3-col s12'+md.utils.escapeHtml(m[1])+'">';
-
-        }else{
-        return '</div>'
-        }
+             if (tokens[idx].nesting === 1) {
+                // opening tag
+                return '<div class="w3-col s12'+md.utils.escapeHtml(m[1])+'">';
+            }else{
+            return '</div>'
+            }
     }
 });
 
@@ -181,10 +178,8 @@ md.use(container , 'row',{
 
 render: function (tokens, idx) {
     var m = tokens[idx].info.trim().match(/^row(.*)$/);
-    console.log(m)
-    if (tokens[idx].nesting === 1) {
-    console.log('regex', md.utils.escapeHtml(m[1]))
-    // opening tag
+      if (tokens[idx].nesting === 1) {
+     // opening tag
     return '<div class="w3-row '+md.utils.escapeHtml(m[1])+'">';
 
     }else{

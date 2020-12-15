@@ -33,6 +33,8 @@
   <script src="scripts\main.js"></script>
   <!-- Markdown Tweaks -->
   <script src="scripts\markdown.js"></script>
+  <!-- navbar -->
+  <script src="scripts\nav.js"></script>
 
 
    <!-- The loading of KaTeX -->
@@ -66,17 +68,13 @@
 
 <body>
 <!-- Navbar -->
+
+<script>init_nav()</script>
 <div class="w3-top" id='topbar'>
-  <div class="w3-bar w3-theme w3-top w3-left-align w3-medium">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-medium" >
     <a class="w3-bar-item w3-button w3-left w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="?linkfile=welcome" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-hover-white">Welcome</a>
-    <a href="?linkfile=courseinfo" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-white">Course Information</a>
-    <a href="?linkfile=lab0" class="w3-bar-item w3-button w3-hover-white w3-hide-small"  onclick="changepage()">Lab 0</a>
-    <a href="?linkfile=lab1" class="w3-bar-item w3-button w3-hover-white w3-hide-small"  onclick="changepage()">Lab 1</a>
-    <a href="?linkfile=lab2" class="w3-bar-item w3-button w3-hover-white w3-hide-small"  onclick="changepage()">Lab 2</a>
-    <a href="?linkfile=lab3" class="w3-bar-item w3-button w3-hover-white w3-hide-small"  onclick="changepage()">Lab 3</a>
-    <a href="?linkfile=lab4" class="w3-bar-item w3-button w3-hover-white w3-hide-small" onclick="changepage()">Lab 4</a>
-    <a href="?linkfile=lab5" class="w3-bar-item w3-button w3-hover-white w3-hide-small"  onclick="changepage()">Lab 5</a>
+    <div id='topnavtarget'>
+   </div>
     <div class='w3-dropdown-click w3-hide-medium w3-hide-large w3-right'>
       <a onclick="dropdownlab()" class="w3-bar-item w3-button w3-left w3-hover-white w3-large w3-theme-l1  w3-right" width='100%'><i class="fa fa-bookmark"></i></a> 
     </div> 
@@ -128,14 +126,6 @@
 <div class="w3-main" style="margin-left:375px;">
   <div class="w3-row" >
     <div id="lablist" class="w3-dropdown-content  w3-bar-block w3-border w3-hide">
-      <a href="?linkfile=welcome" class="w3-bar-item w3-button  w3-hover-white">Welcome</a>
-      <a href="?linkfile=courseinfo" class="w3-bar-item w3-button w3-hover-white">Course Information</a>
-      <a href="?linkfile=lab0" class="w3-bar-item w3-button w3-hover-white "  onclick="changepage()">Lab 0</a>
-      <a href="?linkfile=lab1" class="w3-bar-item w3-button w3-hover-white "  onclick="changepage()">Lab 1</a>
-      <a href="?linkfile=lab2" class="w3-bar-item w3-button w3-hover-white "  onclick="changepage()">Lab 2</a>
-      <a href="?linkfile=lab3" class="w3-bar-item w3-button w3-hover-white "  onclick="changepage()">Lab 3</a>
-      <a href="?linkfile=lab4" class="w3-bar-item w3-button w3-hover-white " onclick="changepage()">Lab 4</a>
-      <a href="?linkfile=lab5" class="w3-bar-item w3-button w3-hover-white "  onclick="changepage()">Lab 5</a>
     </div>
     <!-- Modal Content -->
       <div class="image-modal-popup">
