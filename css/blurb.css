@@ -1,0 +1,511 @@
+/* Contains CSS for styling the blurbs */
+
+
+/*********************************************************************************/
+/* Global Styles */
+/*********************************************************************************/
+
+/* default style for all small blurbs */
+.roundbox{
+    border-radius: 5px;
+    position: relative;
+    padding: 2rem 1rem;
+    margin: 30px 0px;
+  }
+
+/* default style for all large blurbs */  
+.roundboxL{
+    border-radius: 10px;
+    position: relative;
+    padding: 4rem 1rem;
+    margin: 50px 0px;
+    border: 3px solid;
+    
+  }
+
+/* ribbon wrapping */
+.roundboxL::before{
+    position: absolute;  
+    width: calc(100% + 50px - 2rem)!important;
+    left: calc(-25px + 1rem);
+    top: -30px;
+    padding: 5px 0px;   
+    
+}
+
+.roundboxL::after {
+    position: absolute;
+    width: calc(100% + 50px - 2rem)!important;
+    background-color: rgb(211, 211, 211);
+    left: calc(-25px + 1rem);
+    bottom:-5px;
+    padding: 0px 20px;
+}
+
+.roundboxL > iframe{
+    margin:50px;
+}
+/* Garnish formats */
+/* .Equation::after, .Question::before, 
+.Note::before, .Exercise::before,.Exercise::after,
+.Figure::after, .RFigure::after,.LFigure::after, 
+.Simulation::before, .qtotal::after, 
+.etotal::after  */
+.roundbox::before, .roundbox::after, .roundboxL::before, .roundboxL::after{
+  font-weight: bolder;
+  font-size: larger;
+  border-radius: 5px;
+  font-family: "Segoe UI",Arial,sans-serif;
+  padding: 5px 15px;
+  text-align: center;
+  position: absolute;
+
+}
+
+/*Screen size specific items*/
+@media (min-width:993px){ /*This ensure label is centered on small screens*/
+    .Equation::after{
+        left: calc(80% - 4.5rem)!important;
+     }
+    .Question::before{   
+        left: -20px!important;
+     }
+    }
+
+/*********************************************************************************/
+/* Blurb-Specific Styles */
+/*********************************************************************************/
+
+
+/* Material box formats */
+.Materials{
+    margin: 30px;
+    border-radius: 5px!important;
+ }
+ .Materials header{
+  
+  border-radius: 5px!important;
+}
+/*********************************************************************************/
+/* Equation box formats */
+.Equation{
+    background-color:#ccc!important;
+  }
+
+.Equation::after{
+    counter-increment: equation;
+    content: "Equation " counter(equation);
+    background-color:#e7e7e7!important; 
+    text-align: center;
+    top:calc(100% - 1.5rem);
+    left:calc(50% - 4.5rem); 
+    
+    } 
+
+
+/*********************************************************************************/
+/* Question box formats */
+.Question{
+  background-color: #009688!important;
+  color: white;
+ }
+
+.Question::before {
+  counter-increment: question;
+  content: "Question "  counter(question)": ";
+  background-color:#4fa199!important;
+  position: absolute;
+  top: -1rem;
+  left:calc(50% - 80px); 
+}
+
+.Question ol{ 
+  list-style-type: lower-alpha!important;
+  text-align: left;
+  margin: 0px 20px;
+  max-width: calc(100% - 60px);
+}
+.Question ol p{
+  margin-left:0px!important;
+  text-align: left;
+}
+
+/*********************************************************************************/
+/* Exercise box formats */
+.Exercise{
+    background-color:#f0f0f0 !important;
+    color: rgb(0, 0, 0);
+    text-align: left!important;
+    border-color: rgb(211, 211, 211);
+      
+  }
+   
+.Exercise::before {
+    counter-increment: exercise;
+    content: "Exercise "  counter(exercise)": ";
+    background-color: rgb(211, 211, 211);
+}
+.Exercise::after {
+    white-space: pre;
+    content: " ";
+}
+
+.Exercise > ol{
+    margin: 0px 2%;
+}
+.Exercise > ol > li{
+    margin: 2% 0px;
+}
+
+/*********************************************************************************/
+/* Simulation box formats */
+.Simulation{
+    border: 3px #907b7b solid!important;
+    color: rgb(0, 0, 0);
+    text-align: left!important;
+    max-width: 100%!important;
+    width: 100%;
+    border: 0px solid rgb(80, 66, 66);
+    text-indent: 0em;
+    padding: 10px 5px;
+    height:auto;
+    margin-bottom: 20px;
+    position: relative;
+    
+  }
+  
+  .Simulation::before {
+    counter-increment: simulation;
+    content: "Simulation "  counter(simulation)": ";
+    color:white;
+    background-color: rgb(109, 81, 81);
+     
+    
+  }
+/*********************************************************************************/
+/* Note box formats */
+.Note{
+    background-color:#e6dd66!important;
+    color: black;
+    box-shadow: 2px 2px 5px #7a7850;
+    transform: rotate(2deg)
+    }
+
+.Note h3{
+    font-weight: bolder!important;
+}
+.Note:before{
+    
+    content: " \f08d ";
+    font-family: FontAwesome!important;
+    /* background-color:#d6bb44!important; */
+    left:calc(50% - 3rem);
+    top:-55px;
+    font-size: xxx-large;
+    transform: rotate(340deg);
+    text-shadow: 1px 3px 5px #7a7850;
+  }
+
+/*********************************************************************************/
+/* warning box formats */
+.Warning{
+    background-color:#ffa835!important;
+    color: black; 
+    border:5px solid black;
+    }
+.Warning h3{
+    font-weight: bold!important;
+}
+
+.Warning:before{
+    content: " \f071 ";
+    font-family: FontAwesome!important;
+    background-color: #c26e00!important;
+    left:calc(50% - 3rem);
+    top:-55px;
+    font-size: xxx-large;
+    border:5px solid black;
+  }
+
+
+  .shaker{
+    
+    animation: shake2 1.82s cubic-bezier(.16,.17,.19,.37) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    animation-iteration-count: infinite;
+
+  }
+
+  .shaker:hover{
+
+    animation-iteration-count: 0;
+    
+  }
+
+  @keyframes shake2 {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-3px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(3px, 0, 0);
+    }
+  }
+
+
+/*********************************************************************************/
+/* Video box formats */
+.Video{
+    border-radius: 10px;
+    position: relative;
+    padding:0px; 
+    border: 3px solid;
+    border-color: #009688;
+    color: rgb(0, 0, 0);
+    border: 0px solid rgb(80, 66, 66);
+    text-indent: 0em;
+    text-align: center;
+    margin-top:50px;
+  }
+  
+  .Video iframe{
+    margin: auto;
+    margin-bottom: 50px;
+    width: 45vw;
+    height: 25.3125vw;
+    border:#05332e 5px solid;
+  }
+
+  .Video::before {
+    counter-increment: video;
+    content: "Video "  counter(video)"\A ";
+    color:white;
+    background-color: #009688;
+    font-size: larger;
+    padding:5px 30px;
+    font-weight: bolder;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    width: 45vw;
+    
+  }
+
+  
+
+
+/*********************************************************************************/
+/* Table formats */
+
+.Table{
+    max-width: 95%!important;
+    border-collapse:collapse;
+    padding:0px!important;
+    border: 2px solid rgb(155, 155, 155);
+    margin-bottom: 30px;
+    overflow-x:scroll;
+    text-align: center;
+  }
+  
+  .Table:before{
+    counter-increment: table;
+    content: "\A Table "  counter(table)": ";
+    position: relative;
+    width: 100%!important;
+    font-family: Helvetica, sans-serif;
+    display: block;
+    background-color: #c5c5c5;
+    color:rgb(0, 0, 0);
+   
+    
+  }
+  table {
+    width: 100%;
+    margin:auto;
+    font-size: smaller;
+    overflow: scroll;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    
+  }
+  th, td {
+    padding:5px
+  
+  }
+  
+  th{
+    /* border: sienna 2px solid; */
+    border-radius: 2px;
+    font-size: 100%;
+    /* background-color: salmon;
+  } */
+  }
+  
+  thead > tr > th{
+    background-color: rgb(255, 255, 255);
+    color: #041f1c;
+    
+  }
+  td{
+    font-size: smaller;
+    /* background-color: rgb(187, 172, 170); */
+  }
+  
+  tbody > tr:nth-child(even){background-color:#b0b8be!important}
+  
+  tbody > tr:nth-child(odd){background-color:#dadada!important}
+
+
+
+/*********************************************************************************/
+/*********************************************************************************/
+/* Figures: the monster */
+
+
+/* All Figures */
+
+.Fig{
+  border: 2px #646464 solid!important;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 100%;
+  font-weight: bolder;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  padding: 2rem 1rem;
+  display: inline-block;
+  max-width: 100%;
+
+}
+
+
+
+.Fig:after{
+  clear: both!important;
+   font-size: larger;
+
+  border-radius: 5px;
+  font-family: "Segoe UI",Arial,sans-serif;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+
+/* Wide figures */
+
+
+
+/* Regular full size figure */
+.Figure{
+  clear: both;
+  padding-top: 20px;
+  /* display: block!important; */
+   }
+
+.Figure .w3-col{
+  padding: 0px 10px;
+  vertical-align: middle;
+}
+.Figure img{
+  vertical-align: middle;
+  max-width: 70%;
+  max-height:300px;
+ }
+
+
+.Figure::after{
+  counter-increment: figure;
+  content: "\A Figure " counter(figure);
+  background-color:#646464!important;
+  position: relative;
+  bottom:-50px;
+  /* left:calc(50% - 50px); */
+  color: white;
+ 
+}
+
+
+/* Figure Float right/left */
+
+.RFigure, .LFigure{     
+  padding: 20px 10px;
+  display: inline-block;
+  margin: auto;
+  width: 100%!important; 
+}
+
+.RFigure img, .LFigure img{
+  vertical-align: middle;
+  max-height:400px;
+ }
+
+.RFigure::after, .LFigure::after{
+  counter-increment: figure;
+  content: "\A Figure " counter(figure);
+  background-color:#646464!important;
+  color: white;
+  position: absolute;
+  bottom:-20px;
+  left:calc(50% - 60px);
+  max-height: 50px;
+ 
+}
+
+
+
+@media (min-width:993px){
+.RFigure{ float: right;
+ 
+  margin-right: 10px !important;
+  margin-left: 20px !important;
+  margin-top:10px!important;
+ 
+}
+
+.LFigure{ float: left;
+ 
+  margin-right: 20px !important;
+  margin-left: 10px !important;
+  margin-top:10px!important;
+ 
+}
+
+.LFigure , .RFigure{
+  max-width: 350px;
+ 
+}
+
+.RFigure img, .LFigure img{
+  vertical-align: middle;
+  margin:auto
+ }
+
+
+
+}
+
+
+
+
+
+/*********************************************************************************/
+/* Misc Utility */
+/*********************************************************************************/
+
+
+/* This forces seperator columns for center blurbs*/
+.placehold{
+    white-space: pre!important;
+  }

@@ -1,0 +1,436 @@
+/* set counters and base font size */
+body {
+    counter-reset: question exercise figure equation table simulation video;  
+    font-size: medium;
+}
+
+@media (max-width:601px){
+  body {font-size: small!important;}
+}
+@media (min-width:601px){
+  body{font-size: medium;}
+}
+@media (min-width:992px){
+  body{font-size: large!important;}
+}
+
+/* Stop images from running over sections */
+h1 {
+  clear: both;
+  color: #009688!important;
+  font-size: 225%;
+  padding: 20px 0px;
+  border-bottom: rgb(202, 201, 201) solid 1px;
+}
+
+h2{
+  color: black!important;
+  font-size: 175%;
+  padding:10px 10px;
+  margin-left:-10px;
+ 
+}
+/*fix links to sections */
+h1::before, h2::before {
+  display: block;
+  content: " ";
+  height: 60px;
+  margin-top: -60px;
+  visibility: hidden;
+}
+
+/* Main header */
+#part0{
+  color:black!important;
+  font-size: 400%;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  border: 0px!important;
+  margin-top: 50px!important;
+  padding-top: 0px;
+}
+
+
+/* make the main paragraphs pretty */
+#mdcontent{
+  
+  margin-top:20px;
+  margin-right:20px;
+  margin-left:20px;
+  max-width: 1200px;
+}
+
+@media (min-width:993px){
+  #mdcontent{
+    margin-left:10px;
+    margin-right:10px
+  }
+}
+
+#mdcontent > p{
+  text-indent: 1em;
+  text-align: left;
+  text-rendering: optimizeSpeed;
+  padding-left:20px;
+}
+
+/* Make sure figure images don't blow up */
+#mdcontent > .Figure  img, .RFigure img, .LFigure img{
+    max-width: 100%;
+    max-height: 300px;
+    cursor: pointer;
+    height:auto;   
+}
+
+.Question img, .Exercise img{
+  max-width: 100%;
+}
+
+
+
+/* Make the inner text of figures pretty */
+#mdcontent > .Fig  p{
+
+  padding:10px;
+  white-space: normal;
+  display: block;
+}
+
+
+
+/* *********************************** */
+/* Navbar */
+/* *********************************** */
+/* Table of contents */
+
+#mySidebar{
+  position: relative;
+  overflow-x:hidden;
+}
+
+#TOCprint > ul{
+  margin-left:0px;
+  padding: 0px;
+}
+#TOCprint > ul ul{
+  margin-left:0px;
+  padding-left: 20px;
+  font-size: smaller;
+}
+
+#TOCprint{
+  padding: 0 18px;
+  
+  max-height: none;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+/* Style the button that is used to open and close chat */
+
+
+
+
+
+#collapsible {
+  background-color: #009688;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: center;
+
+  font-size: larger;
+  font-weight: bold;
+  height: 60px;
+  position: absolute;
+  bottom:0px;
+  z-index: 2;
+}
+
+#collapsible:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+ 
+
+#chatscreen{
+
+  width:100%;
+  height:calc(100% - 120px);
+  background-color: #f0f0f0 !important;
+  overflow: hidden;
+  position: absolute;
+  top:0px;
+  
+}
+
+#nectirbut{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+ 
+  /* Style the collapsible content. Note: hidden by default */
+
+
+
+    
+  /* Add a background color to the button if it is clicked on 
+  (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, #collapsible:hover{
+    background-color: #ccc;
+  }
+
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+
+
+
+
+
+
+
+
+  @media (max-width: 992px) {
+    .modal-content-wrapper .image-modal-content {
+      flex: 0 0 45%;
+    }
+  }
+  @media (max-width: 550px) {
+    .modal-content-wrapper .image-modal-content {
+      flex: 0 0 100%;
+    }
+  }
+  .modal-content-wrapper .image-modal-content:hover {
+    transform: scale(1.03);
+    transition: 300ms ease-in;
+  }
+  .modal-content-wrapper .image-modal-content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #222;
+  }
+  
+  /* modal popup styles */
+  .image-modal-popup {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    animation: 500ms fadeIn;
+    display: none;
+    z-index: 1000;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .image-modal-popup .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+  }
+  
+  .image-modal-popup .description {
+    text-align: center;
+    max-width: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px
+  }
+  .image-modal-popup img {
+    
+    max-height: calc(100vh - 200px);
+    max-width: calc(100vw - 50px);
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: white;
+  }
+  .image-modal-popup span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 4rem;
+    color: red;
+    cursor: pointer;
+  }
+  .image-modal-popup p {
+    margin: 5px auto;
+    font-size: 1.1rem;
+  }
+  .image-modal-popup a {
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #222;
+    font-weight: 500;
+    text-decoration: none;
+    background: #fff;
+    margin: 10px 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+  
+
+  .image-modal-popup h3{
+    
+    color: white;
+  }
+
+
+  .frame{
+    -ms-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -o-transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+#lablist{
+  z-index: 1;
+  width:100vw;
+  display: block;
+  top:39px;
+  position: fixed;
+ 
+}
+
+#lablist .w3-bar-item{
+  z-index: 5;
+  background-color: white;
+  text-align: center;
+  border-top: 1px #ccc solid;
+}
+/* footer */
+
+
+
+footer{
+  position: relative;
+  left:0px;
+  padding:0px;
+ 
+ 
+}
+
+#ILGfooter{
+  padding:0px;
+  width: 100%;
+  text-align: right;
+  font-size: x-small;
+  background-color:#bbbbbb;
+
+}
+
+#ILGfooter p{
+  vertical-align: center;
+}
+
+/* Totals for Q's and E's */
+
+.Summary{
+text-align: center;
+}
+.qtotal::after{
+  content: counter(question) ' Questions';
+  
+}
+
+.etotal::after{
+  content: counter(exercise) ' Exercises';
+  }
+
+.qtotal, .etotal{
+  
+  border-radius: 10px;
+  font-size: larger;
+  padding:5px;
+  color:white;
+}
+
+.qtotal{
+  background-color: #009688;
+  margin:auto;
+  align-content: center;
+} 
+.etotal{
+  background-color: rgb(121, 121, 121);
+  margin:auto;
+  align-content: center;
+}
+
+
+.qtotal::after, 
+.etotal::after {
+  font-weight: bolder;
+  font-size: larger;
+  border-radius: 5px;
+  font-family: "Segoe UI",Arial,sans-serif;
+  padding: 5px 15px;
+  text-align: center;
+
+
+}
+
+#mdcontent pre{
+  background-color:#ccc;
+  padding:20px;
+  border:rgb(121, 121, 121) solid 2px;
+  white-space: pre-wrap;
+  font-size: smaller;
+  width:80%;
+  margin:auto;
+}
+
+#mdcontent pre::before{
+  content: 'Example Code\A';
+  font-size: larger;
+  font-weight: bolder;
+  overflow: visible;
+}
+
+#mdcontent code{
+  background-color:#ccc;
+  
+}
