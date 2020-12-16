@@ -421,7 +421,7 @@ You can use any icons from [Font Awesome 4.7](https://fontawesome.com/v4.7.0/ico
 
 ## HTML
 
-HTML is enabled in this markdown compiler, so if you need to include something beyond the scope of what is provided, you can directly code it in.
+HTML is enabled in this markdown compiler, so if you need to include something beyond the scope of what is provided, you can directly code it in. Check out the [Course Info](?linkfile=courseinfo) page to see an example
 
 
 # Conclusion
