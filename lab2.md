@@ -1,13 +1,14 @@
 # Lab 2: Magnetic Field
----
-### Materials needed for entire lab:
+
+::: Materials
 - Phyphox
 - A wire (~0.8-1 m)
 - AAA or AA battery
 - Some vertical support (e.g., a book)
 - Paper and ruler
+:::
 
----
+
 # The Biot-Savart Law
 
 In the previous lab, we looked at how moving electric charges feel force in the presence of external electric and magnetic fields. Continuing with the theme of electrodynamics, we will look at the fields and forces caused by moving charges *themselves*.
@@ -92,11 +93,12 @@ As in Lab 0, we must subtract the background filed to ensure the accuracy of the
 
 ## 2. Long straight wire
 
-### Materials needed:
-- phyphox
+::: Materials
+- Phyphox
 - A wire (~0.8-1 m)
 - AAA or AA battery
 - Paper and ruler
+:::
 
 
 ::::::::: Exercise
@@ -231,20 +233,7 @@ Make a table with the loop radius $R$ , magnetometer height $z$ , $r=\frac{R^2}{
 :::
 
 # Write-up
----
 
-::::::row w3-center w3-card-2 w3-flat-clouds
-### **In this lab, there were:**
-:::col l6 m6 s12
- @fa-question-circle qtotal w3-hover-shadow@ 
-:::
-:::col l6 m6 s12
- @fa-pencil-square-o etotal w3-hover-shadow@
-:::
-### **@fa-hand-o-right@ Please be sure to complete all questions and exercises @fa-hand-o-left@**
-::::::
-
----
 ###  **@fa-hand-o-right@  Instructions :**
  #### **1. Answer all questions clearly, showing your work where appropriate.**
  #### **2. Starting on a seperate page:** 
@@ -253,6 +242,9 @@ Make a table with the loop radius $R$ , magnetometer height $z$ , $r=\frac{R^2}{
 
  #### **3. Additional Information:**
  - You should attach images of your plots,  data, and setup -- doing so may allow you to regain partial or full credit even if your experiment fails.
+
+ :::Summary
+ :::
  
 
 

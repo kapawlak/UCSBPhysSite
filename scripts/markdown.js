@@ -17,13 +17,9 @@ function embed_div(name, type){
     return '<div class="w3-row" id= '+ name + '></div>' +preamble+'<div class="w3-col ' + type + ' roundbox s12 m8 l8 w3-container"' +' id="'+LTR+'_'+name+'">'
 }
 
-function quitshake(){
-    console.log('quit')
-    self.style.animationIterationCount = 0
-    console.log('quit?')
-  }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+// Short Blurb
 md.use(container , 'Figure:Equation',{
     render: function (tokens, idx) {
        var m = tokens[idx].info.trim().match(/^Figure:Equation(.*)$/);
@@ -48,29 +44,34 @@ md.use(container , 'Question',{
         }
     }
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//Full Width
 md.use(container , 'Exercise',
     {
     render: function (tokens, idx) {
         if (tokens[idx].nesting === 1) { 
         // This places an opening tag
-        return  '<div class="w3-row"><div class="w3-col Exercise roundboxL s12 m12 l12 w3-container">'
+        return  '<div class="w3-row"><div class="w3-card Exercise w3-theme-l5"><header class="w3-container w3-theme-l2 "><h3>Exercise </h3></header><div class="w3-container slideopen" >'
 
         }else{
         // This places a closing tag
-        return '</div></div>'
+        return '</div><footer class="w3-container w3-theme-l2"><button type="button" class="collapsible w3-theme-l2"><i class="fa fa-chevron-down shaker"></i></button> </footer></div>'
         }
     }
 });
-md.use(container,'Figure:Simulation', {
-render: function (tokens, idx) {
-    if (tokens[idx].nesting === 1) { 
-    // This places an opening tag
-    return '<div class="w3-row"> <div class="w3-col Simulation roundboxL s12 m12 l12 w3-container w3-center">';
 
-    }else{
-    // This places a closing tag
-    return  '</div></div>'
-    }}
+md.use(container,'Figure:Simulation', {
+    render: function (tokens, idx) {
+        if (tokens[idx].nesting === 1) { 
+        // This places an opening tag
+        return  '<div class="w3-row"><div class="w3-card Simulation w3-theme-l6"><header class="w3-container w3-theme-l1 "><h3>Simulation </h3></header><div class="w3-container slideopen" >'
+
+        }else{
+        // This places a closing tag
+        return '</div><footer class="w3-container w3-theme-l2"><button type="button" class="collapsible w3-theme-l2"><i class="fa fa-chevron-down shaker"></i></button> </footer></div>'
+        }
+    }
 })
 
 md.use(container,'Video', {
@@ -86,6 +87,9 @@ md.use(container,'Video', {
     })
 
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////
 ///Notes
 md.use(container,'Note',{
 render: function (tokens, idx) {
@@ -116,7 +120,7 @@ md.use(container,'Warning',{
 
 
 
-
+/////////////////////////////////////////////////////////////////////////////////
 
 
 // Full Width Figure
@@ -193,7 +197,7 @@ md.use(container , 'Materials',{
         if (tokens[idx].nesting === 1) {
         
         // opening tag
-        return '<div class="Materials w3-card-2"><header class="w3-container w3-teal"><h3>Materials Needed: </h3></header><div class="w3-container">';
+        return '<div class="Materials w3-card"><header class="w3-container w3-teal"><h3>Materials Needed: </h3></header><div class="w3-container">';
 
         }else{
         return '</div></div>'
