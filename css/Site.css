@@ -26,10 +26,24 @@ h1 {
 h2{
   color: black!important;
   font-size: 175%;
-  padding:10px 10px;
-  margin-left:-10px;
+  padding:1px 0px; 
+  margin-left: 20px;
+  display: block;
+  clear: both;
+}
+
+
+#mdcontent > h3{
+  color: rgb(22, 22, 22)!important;
+  font-size: 125%;
+  padding:10px 20px; 
+  text-decoration-line: underline;
+  text-decoration-color:  rgb(202, 201, 201) ;
+  text-decoration-thickness: 0.1em;
  
 }
+
+
 /*fix links to sections */
 h1::before, h2::before {
   display: block;
@@ -48,22 +62,24 @@ h1::before, h2::before {
   border: 0px!important;
   margin-top: 50px!important;
   padding-top: 0px;
+  text-align: center;
 }
 
 
 /* make the main paragraphs pretty */
 #mdcontent{
-  
+    
   margin-top:20px;
   margin-right:20px;
   margin-left:20px;
   max-width: 1200px;
+  padding: 0px 20px
 }
 
 @media (min-width:993px){
   #mdcontent{
-    margin-left:10px;
-    margin-right:10px
+    margin-left:0px;
+    margin-right:20px
   }
 }
 
@@ -128,12 +144,12 @@ h1::before, h2::before {
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera*/
-#TOCprint::-webkit-scrollbar{
+#TOCprint::-webkit-scrollbar, .Table::-webkit-scrollbar{
   width: 10px;
   height: 20px;
   background-color: #f0f0f0; /* or add it to the track */
 }
-#TOCprint::-webkit-scrollbar-thumb{
+#TOCprint::-webkit-scrollbar-thumb,  .Table::-webkit-scrollbar-thumb{
   width: 10px;
   height: 20px;
   background-color: #aaa; /* or add it to the track */

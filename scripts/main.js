@@ -2,132 +2,176 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var linkfile = urlParams.get('linkfile')
-if (linkfile == null){
-  linkfile='welcome'
+if (linkfile == null) {
+  linkfile = 'welcome'
 }
 
 //Equation list
-var EqList=[]
+var RefList = { Eq: ['Equation'], Qu: ['Question'] }
 
 
 
-function activeincludeHTML(filenum=linkfile) {
+
+function includeHTML(filenum = linkfile) {
   var z, xhttp;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementById("mdcontent");
 
-  file= filenum+".md"
-  
+  file = filenum + ".md"
+
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
     xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
       if (this.readyState == 4) {
-        if (this.status == 200) {z.innerHTML = doRendering(this.responseText) ;}
-        if (this.status == 404) {z.innerHTML = "<h1>This lab is not available yet!</h1>";}
-        updateRoutine();
+        if (this.status == 200) { z.innerHTML = doRendering(this.responseText); updateRoutine() }
+        if (this.status == 404) { z.innerHTML = "<h1>This lab is not available yet!</h1>"; }
+     
         /*remove the attribute, and call this function once more:*/
       }
-    }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;     
     }
-  
-  
-};
-
-  function changepage(file){
-    urlParams.set("linkfile", file);
-    activeincludeHTML(file)
+    xhttp.open("GET", file, true);
+    xhttp.send();
+    /*exit the function:*/
+    return;
   }
 
- 
 
-function updateRoutine(){
+};
+
+function changepage(file) {
+  urlParams.set("linkfile", file);
+  includeHTML(file)
+}
+
+
+
+function updateRoutine() {
   renderMathInElement(document.body, {
-    delimiters:[
-      {left: "$$", right: "$$", display: true},
-      {left: "$", right: "$", display: false},
-      {left: "\\(", right: "\\)", display: false},
-      {left: "\\[", right: "\\]", display: true}
-    ]})
-
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "$", right: "$", display: false },
+      { left: "\\(", right: "\\)", display: false },
+      { left: "\\[", right: "\\]", display: true }
+    ]
+  })
   htmltweaks()
   replace_icon()
   tableOfContents('[data-toc]', '[data-content]')
-
   setLightBox()
-  document.getElementById('collapsible').style.bottom='0px'
   navbar_close()
- 
-  }
+
+}
 
 
 
 
 
 
-  
 
-    
+
+
 
 
 
 
 function htmltweaks() {
   //name headers
-  headers=document.querySelectorAll("#mdcontent > h1");
+  headers = document.querySelectorAll("#mdcontent > h1");
   for (i = 0; i < headers.length; i++) {
     elmnt = headers[i];
-    if (i>0){
-    elmnt.innerHTML= "Part " + romanize(i) +": "+elmnt.innerHTML
+    if (i > 0) {
+      elmnt.innerHTML = "Part " + romanize(i) + ": " + elmnt.innerHTML
     }
     //elmnt.classList.toggle('w3-row')
-   
-    elmnt.id = "part" +i ;
+
+    elmnt.id = "part" + i;
   }
 
-  eqlist=document.getElementsByClassName('Equation')
-  for(i=0;i<eqlist.length;i++){
-    EqList[i]=eqlist[i].id
+
+  RefList = { Eq: ['Equation'], Qu: ['Question'] }
+
+  eqlist = document.getElementsByClassName('Equation')
+  for (i = 0; i < eqlist.length; i++) {
+    RefList.Eq[i+1]=eqlist[i].id
   }
-
- 
-var coll = document.getElementsByClassName("collapsible");
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    
-    var content = this.parentElement.previousElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      this.innerHTML='<i class="fa fa-chevron-down shaker"></i>'
-    } else {
-      content.style.maxHeight =content.scrollHeight + "px";
-      this.innerHTML='<i class="fa fa-chevron-up shaker"></i>'
+  qulist = document.getElementsByClassName('Question')
+  for (i = 0; i < eqlist.length; i++) {
+    RefList.Qu[i+1]=qulist[i].id
+  }
+  
+  var links = document.querySelectorAll('#mdcontent a')
+  for (i = 0; i < links.length; i++) {
+    var linkcode = links[i].innerText;
+    var identifyit=linkcode + '_' + links[i].hash.slice(4)
+    console.log('id= ',identifyit, ' ---linkcode: ', linkcode, ' ---RL[lc]:', RefList[linkcode])
+    if (RefList[linkcode]!=null) {
+      console.log('entered with lc= ', linkcode)
+      num = RefList[linkcode].findIndex(e => e == identifyit )
+      if(num>0){
+        console.log('found ',identifyit)
+      links[i].innerHTML = `${RefList[linkcode][0]} ${num}`
+      }
     }
-  });
-}
+  }
+
+
+  var coll = document.getElementsByClassName("collapsible");
+
+  for (i = 0; i < coll.length; i++) {
+
+    const start_height = coll[i].parentElement.previousElementSibling.style.maxHeight
+      coll[i].addEventListener("click", function () {
+      
+      this.classList.toggle("active");
+      var content = this.parentElement.previousElementSibling;
+      
+
+
+      if (content.style.maxHeight != start_height) {
+        content.style.maxHeight = start_height;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+      this.parentElement.classList.toggle('preview-hide')
+      this.parentElement.classList.toggle('preview-show')
+      this.firstElementChild.classList.toggle('fa-chevron-up')
+      this.firstElementChild.classList.toggle('fa-chevron-down')
+      this.firstElementChild.classList.toggle('vshaker')
+
+    });
+    console.log('touched \n\n',coll[i].parentElement.previousElementSibling.innerHTML)
+  }
+    var warn = document.getElementsByClassName("Warning");
+
+    for (i = 0; i < warn.length; i++) {
+
+      warn[i].addEventListener("click", function () {
+        this.classList.toggle("hshaker");
+        this.classList.toggle("Warning_muted");
+
+      });
+    }
+
 
   
 
+
+
 }
 
-function navbar_close(){
-  navlinks=document.querySelectorAll("#TOCprint a")
-  for(i=0;i<navlinks.length;i++){
-    navlinks[i].onclick= function (){
+function navbar_close() {
+  navlinks = document.querySelectorAll("#TOCprint a")
+  for (i = 0; i < navlinks.length; i++) {
+    navlinks[i].onclick = function () {
       w3_close()
+    }
   }
 }
-}
 function romanize(num) {
-  var lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1},roman = '',i;
-  for ( i in lookup ) {
-    while ( num >= lookup[i] ) {
+  var lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 }, roman = '', i;
+  for (i in lookup) {
+    while (num >= lookup[i]) {
       roman += i;
       num -= lookup[i];
     }
@@ -135,8 +179,20 @@ function romanize(num) {
   return roman;
 }
 
+function replace_icon() {
+  var text = document.querySelectorAll('#mdcontent h3, #mdcontent h2, #mdcontent p, .Table td')
+  for (i = 0; i < text.length; i++) {
+    emojified = text[i].innerHTML.replaceAll(/(\@)(.*?)(\@)/g, "<i class='fa $2'></i>")
+    text[i].innerHTML = emojified
+  }
 
-function setLightBox(){
+
+
+
+}
+
+
+function setLightBox() {
   // all images inside the image modal content class
   const lightboxImages = document.querySelectorAll('.Fig img');
 
@@ -164,40 +220,7 @@ function setLightBox(){
       modalElement('h3').innerHTML = img.alt;
       modalElement('img').src = img.src;
     });
-    });
-}
-
-
-
-function replace_icon(){
-  var text=document.querySelectorAll('#mdcontent h3, #mdcontent h2, #mdcontent p, .Table td')
-  for(i=0;i<text.length;i++){
-    emojified=text[i].innerHTML.replaceAll(/(\@)(.*?)(\@)/g, "<i class='fa $2'></i>")
-    text[i].innerHTML=emojified
-  }
-
-  var links = document.querySelectorAll('#mdcontent a')
-  for (i = 0; i < links.length; i++) {
-      if(links[i].innerText=='Eq'){
-      eqnum=EqList.findIndex( function findTitle (eq) {
-        return eq == 'Eq_'+links[i].hash.slice(1)
-      }) +1
-      links[i].innerHTML = 'Equation ' + eqnum
-    }
-  }
-
-  warnings=document.getElementsByClassName('Warning')
-  for(i=0;i<length.warnings;i++){
-    warnings[i].addEventListener("click",function stopit(){
-      warnings[i].classList.toggle('shaker') ;
-      warnings[i].querySelector('h5').innerHTML = 'Saftey First';
-
-    })
-
-      
-
-    
-}
+  });
 }
 
 

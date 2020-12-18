@@ -1,6 +1,4 @@
-# First header: is the title
-
-
+# First Header: The Title
 
 ::: Materials
 - Computer
@@ -13,8 +11,28 @@
   - It's a virtue, you know
 :::
 
-### Material List
-Generate your Material List
+
+
+
+
+# Header 2
+
+
+The second single-hashed header becomes Part I. Typically this should be an introduction section. Since it is the first thing that students will read, they will be less mentally fatigued and recall more of this information. It should summarize the 'big-picture' of the lab, and use visual elements such as images, videos and figures.
+
+
+## Second Level Headers
+
+Second  level headers are earmarked on the left navigation screen. This means that students can quickly navigate between parts and the subsections. Second level sections should thus be used to delinate important chunks of information. Unlike this,
+
+### Third Level Headers
+
+Third Level Headers and beyond will not generate a link, so they should be used to draw attention to important subcontent in  the section. 
+
+# Special Elements
+
+## @fa-wrench@ Materials List
+Generate your Material List quickly with the following Code:
 
 ``` 
 ::: Materials 
@@ -33,27 +51,11 @@ Generate your Material List
 
 
 
-# Header 2 becomes Part I
-
-
-Typically this should be an introduction section. Since it is the first thing that students will read, they will be less mentally fatigued and recall more of this information. It should summarize the 'big-picture' of the lab, and use visual elements such as images, videos and figures.
-
-
-## Second Level Headers
-
-Second  level headers are earmarked on the left navigation screen. This means that students can quickly navigate between parts and the subsections. Second level sections should thus be used to delinate important chunks of information. Unlike this,
-
-### Third Level Headers
-
-Third Level Headers and beyond will not generate a link, so they should be used to draw attention to important subcontent in  the section. 
-
-# Special Elements
-
 ## @fa-line-chart@ Figures
 
 Figures generally contain images and have three types. The simplest will generate a full figure which breaks the text. The individual image inside is limited to be 400px tall.
 ``` 
-::: Figure:Figure  optional-name
+::: Figure:Figure  
 ![This is an image](imgs/Balls2.png)
 :::
 ``` 
@@ -119,40 +121,40 @@ In order to accomodate a row of images, the site makes use of W3.CSS standard co
 
 ::::::Figure:Figure
 
-:::col l1 w3-theme-l1
+:::col l1 theme-l1
 C1
 :::
-:::col l1 w3-theme-l2
+:::col l1 theme-l2
 C2
 :::
-:::col l1 w3-theme-l3
+:::col l1 theme-l3
 C3
 :::
-:::col l1 w3-theme-l4
+:::col l1 theme-l4
 C4
 :::
-:::col l1 w3-theme-l5
+:::col l1 theme-l5
 C5
 :::
-:::col l1 w3-theme-l6
+:::col l1 theme-l6
 C6
 :::
-:::col l1 w3-theme-l5
+:::col l1 theme-l5
 C7
 :::
-:::col l1 w3-theme-l4
+:::col l1 theme-l4
 C8
 :::
-:::col l1 w3-theme-l3
+:::col l1 theme-l3
 C9
 :::
-:::col l1 w3-theme-l2
+:::col l1 theme-l2
 C10
 :::
-:::col l1 w3-theme-l1
+:::col l1 theme-l1
 C11
 :::
-:::col l1 w3-theme-l2
+:::col l1 theme-l2
 C12
 :::
 
@@ -212,19 +214,19 @@ $$
 :::
 
 
-Equation markup uses standard KaTeX. For less important equations, KaTeX may be rendered in-line with single dollar signs `$a=\tfrac{1}{2}\pi r^2$`, e.g. : For our purposes [Eq](#gbt) can be reduced to the more familiar $a=\tfrac{1}{2}\pi r^2$
+Equation markup uses standard KaTeX. For less important equations, KaTeX may be rendered in-line with single dollar signs `$a=\tfrac{1}{2}\pi r^2$`, e.g. : For our purposes [Eq](#Eq-gbt) can be reduced to the more familiar $a=\tfrac{1}{2}\pi r^2$
 
 ## @fa-question-circle@ Questions
 
 Question boxes contain graded action items for students, and are brightly colored to draw attention to them. They are automatically numbered and may be linked to.
 
 ```
-:::Question
+:::Question optional-name
 Are you following along with this tutorial?
 :::
 ```
 
-:::Question
+:::Question areyou
 Are you following along with this tutorial?
 :::
 
@@ -242,6 +244,7 @@ Questions with multiple subparts are automatically labeled with lower-case lette
 2. How would this result change if $M$ was a manifold of genus 2? Discuss
 :::
 
+[Qu](#Qu-areyou)
 ## @fa-sitemap@ Exercises
 
 Exercises are another important call-to-action for students. They act as a stand alone prompt with step-by-step instructions for completing part of a lab. They are automatically numbered and occur in full-width boxes so that any figures or questions within have sufficient readability.
@@ -295,7 +298,7 @@ Videos can be added directly via iframe since html is enabled. Use the Video con
 
 ## @fa-space-shuttle@ Simulations
 
-## @fa-warning@ Notes, Warnings, Expanded Info
+## @fa-warning@ Notes, Warnings,
 
 ### Notes
 Notes are small blurbs meant to call students' attention to a potential pitfall, or a subtly they might otherwise miss
@@ -351,14 +354,14 @@ Tables are as usual, and will fill the entire width available. If the width is n
 
 ## Linking (WIP)
 
-Linking allows you to reference previous named material, autogenerating a link to the place on the page it is located and the correct description of the item. 
+Linking allows you to reference previous named material, autogenerating a link to the place on the page it is located and the correct description of the item. The syntax is `[Eq](#Eq-gbt)`
 
 ```
 [Eq](#gbt) is a link to the Gauss-Bonnet Theorem
 
 ``` 
 
-[Eq](#gbt) is a link to the Gauss-Bonnet Theorem.
+[Eq](#Eq-gbt) is a link to the Gauss-Bonnet Theorem.
 
 To name an equation, simply provide a name directly after the Equation declaration (on the same line)
 
