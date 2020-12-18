@@ -55,11 +55,11 @@ Generate your Material List quickly with the following Code:
 
 Figures generally contain images and have three types. The simplest will generate a full figure which breaks the text. The individual image inside is limited to be 400px tall.
 ``` 
-::: Figure:Figure  
+::: Figure  
 ![This is an image](imgs/Balls2.png)
 :::
 ``` 
-::: Figure:Figure  
+::: Figure  
 ![This is an image](imgs/Balls2.png)
 :::
 
@@ -68,7 +68,7 @@ To improve visual variety you can also make right and left floating figures, res
 
 Right:
 ``` 
-::: Figure:RFigure
+::: RFigure
 ![This is a right floating image](imgs/phyphox.png)
 :::
 ``` 
@@ -77,7 +77,7 @@ Right:
 
 Left: 
 ``` 
-::: Figure:LFigure
+::: LFigure
 ![The relationship between x and t is constant](imgs/Constant.png)
 ![The relationship between x and t is linear](imgs/Linear.png)
 ![The relationship between x and t is quadratic](imgs/Quad.png)
@@ -89,7 +89,7 @@ The figure will not float next to this text because the text is placed above the
 
 <p style="color:gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 
-::: Figure:RFigure  
+::: RFigure  
 ![This is a right floating image](imgs/phyphox.png)
 :::
 
@@ -101,7 +101,7 @@ It will, however, float to the right of text that follows. Floating figures are 
 
 <p style="color:gray">Molestie nunc non blandit massa enim nec. Donec ac odio tempor orci dapibus ultrices in. Maecenas pharetra convallis posuere morbi. Dignissim suspendisse in est ante. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. In hendrerit gravida rutrum quisque non tellus orci ac. Sit amet dictum sit amet. Urna nec tincidunt praesent semper feugiat nibh sed. Id volutpat lacus laoreet non curabitur gravida. Iaculis urna id volutpat lacus laoreet non curabitur. Elementum nibh tellus molestie nunc non. Sagittis aliquam malesuada bibendum arcu. Senectus et netus et malesuada fames ac turpis egestas. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Consequat nisl vel pretium lectus quam id leo in vitae.</p>
 
-:::Figure:LFigure
+:::LFigure
 ![The relationship between x and t is constant](imgs/Constant.png)
 ![The relationship between x and t is linear](imgs/Linear.png)
 ![The relationship between x and t is quadratic](imgs/Quad.png)
@@ -119,7 +119,7 @@ You might worry that the images appear too small when multiple are in a figure, 
 
 In order to accomodate a row of images, the site makes use of W3.CSS standard columnization. Each full figure generates a row div class containing 12 equally sized columns. These are visualized in the figure below
 
-::::::Figure:Figure
+::::::Figure
 
 :::col l1 theme-l1
 C1
@@ -169,7 +169,7 @@ C12
 Within this, we can designate how many columns each part of the figure should take up large screens. The example below shows two images that each take up half of the horizontal space = 6 columns Note: all columns take up the full width on mobile and tablet sized screens.
 
 ```
-::::::Figure:Figure
+::::::Figure
 :::col l6
 ![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
 
@@ -182,7 +182,7 @@ Part B:This figure takes up 6 of 12 rows
 :::
 ::::::
 ```
-::::::Figure:Figure
+::::::Figure
 :::col l6
 ![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
 
@@ -200,14 +200,14 @@ Part B:This figure takes up 6 of 12 rows
 Just as important as figures, equations get their own box. Each equation is automatically numbered. Moreover, equations can be named and linked to later (see linking Section). 
 
 ```
-:::Figure:Equation equation_name
+:::Equation equation_name
 $$
 \int_M K dA+\int_{\partial M}k_g ds=2\pi\chi(M)
 $$
 :::
 ```
 
-:::Figure:Equation gbt
+:::Equation gbt
 $$
 \int_M K dA+\int_{\partial M}k_g ds=2\pi\chi(M)
 $$
@@ -319,11 +319,13 @@ Warnings are like notes, but indicate possible *danger* to the student. To make 
 ```
 ::: Warning
 Knives are sharp and not a toy!
+(click to dismiss)
 :::
 ```
 
 ::: Warning
 Knives are sharp and not a toy!
+(click to dismiss)
 :::
 
 ### Tables
@@ -331,7 +333,7 @@ Knives are sharp and not a toy!
 Tables are as usual, and will fill the entire width available. If the width is not long enough to display the table, the table will become scrollable 
 
 ```
-:::Figure:Table
+:::Table
 |Offset  $y$  | $R$ |$1/R$  | Measured $B_y$   |Measured $B_z$  | Field strength $B$ |
 |------|------|------|------|------|------|
 |@fa-pencil@    |      |      |      |      |      |     
@@ -341,7 +343,7 @@ Tables are as usual, and will fill the entire width available. If the width is n
 :::
 ```
 
-:::Figure:Table
+:::Table
 |Offset  $y$  | $R$ |$1/R$  | Measured $B_y$   |Measured $B_z$  | Field strength $B$ |
 |------|------|------|------|------|------|
 |@fa-pencil@    |      |      |      |      |      |     
@@ -375,14 +377,14 @@ To nest elements, you must include additional colons for each level of nesting w
 :::::::::Exercise
 In this exercise, you will do stuff.
 
-::: Figure:Figure
+::: Figure
 ![explanatory image](imgs/calibration.gif)
 :::
 
 ::::::Question
 Look at the image below and write the first word that comes to mind
 
-:::Figure:Figure
+:::Figure
 ![it dips](dip_gif.gif)
 :::
 ::::::
@@ -392,14 +394,14 @@ Look at the image below and write the first word that comes to mind
 :::::::::Exercise
 In this exercise, you will do stuff.
 
-::: Figure:Figure
+::: Figure
 ![explanatory image](imgs/calibration.gif)
 :::
 
 ::::::Question
 Look at the image below and write the first word that comes to mind
 
-:::Figure:Figure
+:::Figure
 ![it dips](imgs/dip_gif.gif)
 :::
 ::::::
