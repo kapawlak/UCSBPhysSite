@@ -221,6 +221,9 @@ ul, ol {
   margin-left:0px!important;
   text-align: left;
 }
+.Question::after{
+  display: none;
+}
 
 /*********************************************************************************/
 /* Note box formats */
