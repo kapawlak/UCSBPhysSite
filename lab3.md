@@ -33,7 +33,7 @@ These three variables are interrelated, as each quantity tells you about the *ch
 
 ## 1. Motion with No Forces
 
-:::Figure:RFigure
+:::RFigure
 ![](imgs/nov_pos.gif)
 :::
 To make our discussion concrete, we should review some basic physics in the case that there are no forces acting on the body of interest. 
@@ -46,7 +46,7 @@ Let's imagine that that at $t=0$, we have a ball at rest at a height $y_0= 25 m$
 Now we imagine that this ball is given an initial velocity $v_0 = + 10$ m/s by tossing it upwards, with no forces acting upon it (for example, in space).  Since no forces are acting on the ball, the *change* in the velocity must be zero, so $v(t) = v_0=10$m/s for all time.  Note that the time, $t$, does not appear in this equation!
 
 
-::::::Figure:Figure
+::::::Figure
 :::col l5 m5 s12
 ![](imgs/v10_pos.gif)
 :::
@@ -76,7 +76,7 @@ $$
 v(t) = a t + v_0 
 $$
 
-::::::Figure:Figure
+::::::Figure
 
 :::col l6 m6 s12
 ![](imgs/acc_pos.gif)
@@ -122,7 +122,7 @@ where y is the position, $v_{0y}$ the initial velocity, $a_{y}$ the acceleration
 
 ### General Properties of Motion Curves
 
-::::::Figure:RFigure
+::::::RFigure
 
 ![The relationship between x and t is constant](imgs/Constant.png)
 
@@ -157,7 +157,7 @@ The following figure from Hyperphysics shows the trajectory of a body whose acce
 
 Part A shows the three plots unobstructed. Please notice how the velocity corresponds to each section of the position plot. Whenever the position plot is linear, the velocity is constant. Whenever the position plot is curved, the velocity is linear. If the position is curving upwards, the velocity is positive, if the position is curving downwards, the velocity is negative. The Acceleration plot corresponds to the velocity plot exactly the same way the velocity plot corresponds to the position plot.
 
-::::::Figure:Figure
+::::::Figure
 
 :::col l6 m6 s12
 ![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
@@ -176,7 +176,7 @@ Part B indicates points on the plots which correspond to the description of Part
 :::::: Exercise
 Now that you have gained familiarity with position, velocity, and acceleration plots we can do analysis. In this exercise you will take a new position plot and create sketches of the velocity and acceleration plots. Please see Figure 6 below.
 
-:::Figure:Figure
+:::Figure
 ![](imgs/PvTSketch.png)
 :::
 
@@ -204,7 +204,7 @@ Make sure to take a picture of your sketch plots and include them in your report
 
 In this section we will look at different balls dropped from the sixth floor walkway of Broida Hall. The four balls dropped in Video 1 are of varying sizes and weights. Figure 7 shows the balls which are dropped. 
 
-:::Figure:Figure
+:::Figure
 ![](imgs/Balls2.png)
 :::
 
@@ -242,7 +242,7 @@ Below is a short video demonstrating how the Tracker software was used to colect
 
 The data you will need is in Table 1 below, linked in a google sheet.
 
-:::Figure:Table
+:::Table
 
 | Ball Drop Data Set | 
 | -------- | 
@@ -290,7 +290,7 @@ The computer will adjust $a$, $b$, and $c$ to best fit the data provided. Let's 
 
 Equation 4 looks a lot like our kinematic equation for motion. Let's equate Equation 4 to the kinematic equation. We do this in Table 2 below. Each row starts by defining the variable. The next column has the symbol we use to represent the variable in the fit. The final column has the equivalent symbol used in the kinematic equation.
 
-:::Figure:Table
+:::Table
 | Variable Name | Fit Symbol | Kinematic Symbol |
 | -------- | -------- | -------- |
 | Time     | $x$     | $t$     |
@@ -322,7 +322,7 @@ In this exercise we will be more quantitative about our analysis. We will perfor
 1. For each of the drops perform a polynomial fit of degree 2. 
 2. Create a table to summarize the information from your fits. **Hint:** $a=\frac{1}{2}g$, so make sure to solve this for $g$ before putting it in your table. Your table should look like the following:
 
-:::Figure:Table
+:::Table
 
 
 | Parameters| Ideal Drop | Dog Ball | Basketball | Volleyball | Beach Ball|

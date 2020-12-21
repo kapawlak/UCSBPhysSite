@@ -1,13 +1,14 @@
 # Lab 2: Magnetic Field
----
-### Materials needed for entire lab:
+
+::: Materials
 - Phyphox
 - A wire (~0.8-1 m)
 - AAA or AA battery
 - Some vertical support (e.g., a book)
 - Paper and ruler
+:::
 
----
+
 # The Biot-Savart Law
 
 In the previous lab, we looked at how moving electric charges feel force in the presence of external electric and magnetic fields. Continuing with the theme of electrodynamics, we will look at the fields and forces caused by moving charges *themselves*.
@@ -36,7 +37,7 @@ In this lab, we will explore the Biot-Savart law by indirectly determining *the 
 
 Recall that for a long straight wire, the magnetic field wraps around the line of current according to the right-hand rule [Eq](#biot_law):
 
-:::Figure:Figure
+:::Figure
 ![](imgs/RHR.png)
 :::
 
@@ -79,7 +80,7 @@ As in Lab 0, we must subtract the background filed to ensure the accuracy of the
 ::::::Note
  If the long wire you have is *enameled*, it must be scraped off at the contact points, else the circuit will **NOT** conduct. The safest way to do this is to grip the ends of each wire with the alligator clips (or something similar), squeeze them closed, and pull. Doing this a few times should scrape off enough enamel to allow sufficient conduction.
 
-:::Figure:Figure
+:::Figure
 
 ![iOLab](imgs/stripwire_small.gif)
 
@@ -92,11 +93,12 @@ As in Lab 0, we must subtract the background filed to ensure the accuracy of the
 
 ## 2. Long straight wire
 
-### Materials needed:
-- phyphox
+::: Materials
+- Phyphox
 - A wire (~0.8-1 m)
 - AAA or AA battery
 - Paper and ruler
+:::
 
 
 ::::::::: Exercise
@@ -105,7 +107,7 @@ In this geometry, the wire is sitting flat on the desk, parallel to the side of 
 Assuming your phone has a small thickness, i.e., the height of the magnetometer is ignorable, what B component(s) do you expect to observe from the current carrying wire in this configuration?
 :::
 
-::: Figure:Figure
+::: Figure
 ![geometry#1-1](imgs/setup1.png)
 :::
 
@@ -135,7 +137,7 @@ Review your data and make a table like the one below with appropriate units.
 **Note**: whether you have $B_y$ component or not depends on your observations in question 1 & 2. If you do observe $B_y$, don't forget to consider the height of the magnetometer in your calculation of $R$!
 
 ::::::
-:::Figure:Table
+:::Table
 
 
 |Offset  $y$  | $R$ |$1/R$  | Measured $B_y$ *  |Measured $B_z$  | Field strength $B$ |
@@ -183,7 +185,7 @@ Review your data and make a table like the one below with appropriate units.
 
 :::::: Exercise
 We will now measure the magnetic field induced by a loop of current.
-::: Figure:Figure
+::: Figure
 ![geometry#2](imgs/setup2.png)
 :::
 
@@ -200,7 +202,7 @@ We will now measure the magnetic field induced by a loop of current.
 ::: Question
 Make a table with the loop radius $R$ , magnetometer height $z$ , $r=\frac{R^2}{(R^2+z^2)^{3/2}}$  , and the measured field strength in the $z$ direction, with appropriate units. 
 :::
-:::Figure:Table
+:::Table
  
 | $R$|$z$ | $r$ | $B_z$|
 | ------| ------| ------ |------| 
@@ -231,20 +233,7 @@ Make a table with the loop radius $R$ , magnetometer height $z$ , $r=\frac{R^2}{
 :::
 
 # Write-up
----
 
-::::::row w3-center w3-card-2 w3-flat-clouds
-### **In this lab, there were:**
-:::col l6 m6 s12
- @fa-question-circle qtotal w3-hover-shadow@ 
-:::
-:::col l6 m6 s12
- @fa-pencil-square-o etotal w3-hover-shadow@
-:::
-### **@fa-hand-o-right@ Please be sure to complete all questions and exercises @fa-hand-o-left@**
-::::::
-
----
 ###  **@fa-hand-o-right@  Instructions :**
  #### **1. Answer all questions clearly, showing your work where appropriate.**
  #### **2. Starting on a seperate page:** 
@@ -253,6 +242,9 @@ Make a table with the loop radius $R$ , magnetometer height $z$ , $r=\frac{R^2}{
 
  #### **3. Additional Information:**
  - You should attach images of your plots,  data, and setup -- doing so may allow you to regain partial or full credit even if your experiment fails.
+
+ :::Summary
+ :::
  
 
 

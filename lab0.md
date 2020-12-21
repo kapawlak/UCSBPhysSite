@@ -1,18 +1,18 @@
 # Lab 0: Learning to use iOLab
----
-### All Materials Needed :
+
+::: Materials
 - Your phone with the phyphox App installed
 - A magnet
 - Ruler
 - Steel screw
- 
+:::
 
----
+
 
 # The Phyphox App
 
 
-:::Figure:RFigure
+:::RFigure
 ![The Phyphox Phone App in the iOS store](imgs/phyphox.png)
 :::
 
@@ -20,11 +20,7 @@ In this intro lab, [google](google.com) we will learn how to use the phyphox app
 
 Phyphox allows you to use the sensors in your phone to measure quantities such as frequency, acceleration, magnetic fields, etc. Data can be exported in many common formats for later analysis.
 
-
-
-####
-
- You are encouraged to play with phyphox,  explore its capabilities and experiment ideas on the website, and take creative license to your investigations throughout the course. The instructions provided in each lab can be seen as a "minimum" requirement -- the features of phyphox go far beyond these suggestions
+You are encouraged to play with phyphox,  explore its capabilities and experiment ideas on the website, and take creative license to your investigations throughout the course. The instructions provided in each lab can be seen as a "minimum" requirement -- the features of phyphox go far beyond these suggestions
 
 # Experiments
 ## 1. Overview
@@ -36,15 +32,17 @@ Our first project will be exploring the field of permanent magnets, and getting 
 
 ## 2. Get to know the magnetometer
 
-### Materials needed:
+::: Materials
 
----
 - Your phone
 - A magnet
 - Steel screw
+:::
 
----
+####
 
+#### 
+<br>
 The first thing you should do, is to make sure that you know exactly where in your phone the magnetometer is. It’s never in the center of the device, so you can’t make an accurate measurement just by moving a magnetic source toward or away from the face of your phone.  Usually the magnetometer is located somewhere at the edge of the phone, and its exact location depends on the brand and model.
 
 **For  experiments, an appropriate location may be a room with minimal electronic devices, or on top of a wooden/nonmetallic table. Be sure to remove any magnets and metals from the experiment area to minimize external fields.**
@@ -60,7 +58,8 @@ We will now describe the process you will  use to find the location of the magne
 2. Put the magnet away from your experimental area
 3. Move the tip across the surface of your phone until you get a strong reading as it reaches the magnetometer.
 ::::::
- The magnetometer in your phone is extremely sensitive because it is designed to be used as a compass. It can easily resolve 50µT, but it also saturates at few mT.  If you are using a neodymium magnet, it might easily saturate the sensor due to its strong fields. Make sure that the magnet is either weak enough or far enough from the sensor so that the field strength stays below 2mT. Just check that if the magnet gets closer the readings can still increase.
+
+The magnetometer in your phone is extremely sensitive because it is designed to be used as a compass. It can easily resolve 50µT, but it also saturates at few mT.  If you are using a neodymium magnet, it might easily saturate the sensor due to its strong fields. Make sure that the magnet is either weak enough or far enough from the sensor so that the field strength stays below 2mT. Just check that if the magnet gets closer the readings can still increase.
  
 Now that we have found the location of the magnetometer, the next step would be to know its features. On phyphox, you can see the magnetometer has a *calibrated* and *uncalibrated* mode. Think about what mode should be used for the purpose of measuring the magnetic field strength of a magnet.
 
@@ -87,11 +86,10 @@ Therefore, for the purpose of measuring the strength of a magnetic field, you sh
 
 ## 3. Measure direction and strength of a magnetic field using the magnetometer
 
-### Materials needed:
----
+:::Materials
 - Your phone
 - A magnet
----
+:::
 
 In this lab, the magnet will provide an external magnetic field. Our first task is to characterize the magnet by measuring the *direction* of this field. Later, we will take care of the backgroud noise to measure the *magnitude*.
 
@@ -122,18 +120,15 @@ By observing how $B_z$ changes with the vertical motion of the magnet, you shoul
 ::::::
 
 ## 4. Measure the field around a magnetic source
-### Materials needed:
-
----
+:::Materials
 - Your phone
 - A magnet
 - Ruler
 - Steel screw
+:::
 
----
 
-
-:::Figure:Figure
+:::RFigure
   ![The magnetic field of a bar magnet has the characteristic of a 'dipole', where its strength falls off more slowly in the direction perpendicular to its polarized axis.](imgs/BarMagnetFieldFRONT.png)
 :::
 
@@ -168,7 +163,7 @@ As your final exercise in getting familiar with the magnetometer, you will attem
 5. Record about 1 second of data and stop.
 6. Double the distance to 1 cm, 2 cm, 4 cm, and record 1 second of data each.
 7. Export the data. For each measurement made above, calculate the average of the 1-second interval, and record the average field strength and the distance of the measurement in a table.
-:::Figure:Figure
+:::Figure
 ![](imgs/setup.png)
 :::
 
