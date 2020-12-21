@@ -99,7 +99,6 @@ It will, however, float to the right of text that follows. Floating figures are 
 
 <p style="color:gray">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
 
-<p style="color:gray">Molestie nunc non blandit massa enim nec. Donec ac odio tempor orci dapibus ultrices in. Maecenas pharetra convallis posuere morbi. Dignissim suspendisse in est ante. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. In hendrerit gravida rutrum quisque non tellus orci ac. Sit amet dictum sit amet. Urna nec tincidunt praesent semper feugiat nibh sed. Id volutpat lacus laoreet non curabitur gravida. Iaculis urna id volutpat lacus laoreet non curabitur. Elementum nibh tellus molestie nunc non. Sagittis aliquam malesuada bibendum arcu. Senectus et netus et malesuada fames ac turpis egestas. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Consequat nisl vel pretium lectus quam id leo in vitae.</p>
 
 :::LFigure
 ![The relationship between x and t is constant](imgs/Constant.png)
@@ -113,7 +112,6 @@ You might worry that the images appear too small when multiple are in a figure, 
 
 <p style="color:gray">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
 
-<p style="color:gray">Molestie nunc non blandit massa enim nec. Donec ac odio tempor orci dapibus ultrices in. Maecenas pharetra convallis posuere morbi. Dignissim suspendisse in est ante. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. In hendrerit gravida rutrum quisque non tellus orci ac. Sit amet dictum sit amet. Urna nec tincidunt praesent semper feugiat nibh sed. Id volutpat lacus laoreet non curabitur gravida. Iaculis urna id volutpat lacus laoreet non curabitur. Elementum nibh tellus molestie nunc non. Sagittis aliquam malesuada bibendum arcu. Senectus et netus et malesuada fames ac turpis egestas. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Consequat nisl vel pretium lectus quam id leo in vitae.</p>
 
 ### Figures: Advanced
 
@@ -234,13 +232,13 @@ Questions with multiple subparts are automatically labeled with lower-case lette
 
 ```
 :::Question
-1. Using [Eq](#gbt) for the case of $d=2$ , derive the result $a=\tfrac{1}{2}\pi r^2$
+1. Using [Eq](#Eq-gbt) for the case of $d=2$ , derive the result $a=\tfrac{1}{2}\pi r^2$
 2. How would this result change if $M$ was a manifold of genus 2? Discuss
 :::
 ```
 
 :::Question
-1. Using [Eq](#gbt) for the case of $d=2$ , derive the result $a=\tfrac{1}{2}\pi r^2$
+1. Using [Eq](#Eq-gbt) for the case of $d=2$ , derive the result $a=\tfrac{1}{2}\pi r^2$
 2. How would this result change if $M$ was a manifold of genus 2? Discuss
 :::
 
@@ -298,7 +296,7 @@ Videos can be added directly via iframe since html is enabled. Use the Video con
 
 ## @fa-space-shuttle@ Simulations
 
-## @fa-warning@ Notes, Warnings,
+## @fa-warning@ Notes, Warnings, Tables
 
 ### Notes
 Notes are small blurbs meant to call students' attention to a potential pitfall, or a subtly they might otherwise miss
@@ -359,7 +357,7 @@ Tables are as usual, and will fill the entire width available. If the width is n
 Linking allows you to reference previous named material, autogenerating a link to the place on the page it is located and the correct description of the item. The syntax is `[Eq](#Eq-gbt)`
 
 ```
-[Eq](#gbt) is a link to the Gauss-Bonnet Theorem
+[Eq](#Eq-gbt) is a link to the Gauss-Bonnet Theorem
 
 ``` 
 
@@ -423,6 +421,18 @@ You can use any icons from [Font Awesome 4.7](https://fontawesome.com/v4.7.0/ico
 @fa-briefcase@
 @fa-check@
 @fa-gear@
+## Foot Notes
+
+
+Footnotes are automatically numbered and create small popups on the bottom of the screen that linger for a few seconds to allow for clicking. These are inserted using:
+
+```
+[fn]An interesting and informative comment appears here, as if by magic. [http://www.google.com](http://www.google.com)[/fn]
+```
+
+  You can see the effect by hovering over the number[fn]An interesting and informative comment appears here, as if by magic. [http://www.google.com](http://www.google.com)[/fn]. 
+
+
 
 ## HTML
 

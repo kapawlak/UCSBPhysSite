@@ -56,7 +56,7 @@ function updateRoutine() {
     ]
   })
   htmltweaks()
-  replace_icon()
+  replace_tags()
   tableOfContents('[data-toc]', '[data-content]')
   setLightBox()
   navbar_close()
@@ -88,9 +88,7 @@ function htmltweaks() {
     elmnt.id = "part" + i;
   }
 
-
   RefList = { Eq: ['Equation'], Qu: ['Question'] }
-
   eqlist = document.getElementsByClassName('Equation')
   for (i = 0; i < eqlist.length; i++) {
     RefList.Eq[i+1]=eqlist[i].id
@@ -117,17 +115,11 @@ function htmltweaks() {
 
 
   var coll = document.getElementsByClassName("collapsible");
-
   for (i = 0; i < coll.length; i++) {
-
     const start_height = coll[i].parentElement.previousElementSibling.style.maxHeight
       coll[i].addEventListener("click", function () {
-      
       this.classList.toggle("active");
       var content = this.parentElement.previousElementSibling;
-      
-
-
       if (content.style.maxHeight != start_height) {
         content.style.maxHeight = start_height;
       } else {
@@ -179,12 +171,17 @@ function romanize(num) {
   return roman;
 }
 
-function replace_icon() {
+function replace_tags() {
   var text = document.querySelectorAll('#mdcontent h3, #mdcontent h2, #mdcontent p, .Table td')
   for (i = 0; i < text.length; i++) {
     emojified = text[i].innerHTML.replaceAll(/(\@)(.*?)(\@)/g, "<i class='fa $2'></i>")
     text[i].innerHTML = emojified
+
+    fnoted= text[i].innerHTML.replaceAll(/\[fn\](.*?)\[\/fn\]/g, "<span class= 'tooltip'><sup>]</sup><span class ='tooltiptext'>$1</span></span>")
+    text[i].innerHTML = fnoted
   }
+
+  
 
 
 

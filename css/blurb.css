@@ -422,7 +422,7 @@ ul, ol {
 .Figure img{
   vertical-align: middle;
   max-width: 70%;
-  max-height:300px;
+  max-height:20em;
  }
 
 
@@ -449,7 +449,7 @@ ul, ol {
 
 .RFigure img, .LFigure img{
   vertical-align: middle;
-  max-height:400px;
+  max-height:15em;
  }
 
 .RFigure::after, .LFigure::after{

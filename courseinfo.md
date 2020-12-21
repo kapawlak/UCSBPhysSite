@@ -81,10 +81,11 @@ neodynium magnets
 
 
 <h3>Long Wire</h3>
-<p> Any long, insulated wire will do. The cheapest we found on amazon is this 
-<a href='https://www.amazon.com/gp/product/B07P2H1CX6/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1'>
+<p> Any long (~10ft+), insulated wire will do. You should look for solid 22 or 24 gauge wire. The cheapest we found on amazon is this 
+<a href='https://www.amazon.com/dp/B07DYHHMYH/ref=cm_sw_r_tw_dp_x_Tto3FbD4K7AJB'>
 magnet wire
-</a>. Again, this material is usually available quite cheaply at any hardware or hobby store.
+</a> and this 
+<a href='https://www.amazon.com/dp/B07DYHHMYH/ref=cm_sw_r_tw_dp_x_-Ho3FbTACA38T'>insulated wire</a>. Either will do. Again, this material is usually available quite cheaply at any hardware or hobby store.
 </p>
 
 <h3>Misc Household items</h3>
@@ -106,7 +107,7 @@ magnet wire
     <p class="w3-border w3-padding-large w3-padding-32 w3-center">
     <img src='imgs/neomagnet.jpg' height='150px'></p>
     <p class="w3-border w3-padding-large w3-padding-32 w3-center">
-    <img src='imgs/wirespool.jpg' height='150px'></p>
+    <img src='imgs/MW1.jpg' height='150px'></p>
 </div>
 
 
