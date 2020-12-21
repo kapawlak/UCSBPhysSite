@@ -56,11 +56,11 @@ Generate your Material List quickly with the following Code:
 Figures generally contain images and have three types. The simplest will generate a full figure which breaks the text. The individual image inside is limited to be 400px tall.
 ``` 
 ::: Figure  
-![This is an image](imgs/Balls2.png)
+![This is an image](../imgs/Balls2.png)
 :::
 ``` 
 ::: Figure  
-![This is an image](imgs/Balls2.png)
+![This is an image](../imgs/Balls2.png)
 :::
 
 To improve visual variety you can also make right and left floating figures, respectively. These will float to the right(left) of any text that *follows* it.
@@ -69,7 +69,7 @@ To improve visual variety you can also make right and left floating figures, res
 Right:
 ``` 
 ::: RFigure
-![This is a right floating image](imgs/phyphox.png)
+![This is a right floating image](../imgs/phyphox.png)
 :::
 ``` 
 
@@ -78,9 +78,9 @@ Right:
 Left: 
 ``` 
 ::: LFigure
-![The relationship between x and t is constant](imgs/Constant.png)
-![The relationship between x and t is linear](imgs/Linear.png)
-![The relationship between x and t is quadratic](imgs/Quad.png)
+![The relationship between x and t is constant](../imgs/Constant.png)
+![The relationship between x and t is linear](../imgs/Linear.png)
+![The relationship between x and t is quadratic](../imgs/Quad.png)
 :::
 ``` 
 
@@ -90,7 +90,7 @@ The figure will not float next to this text because the text is placed above the
 <p style="color:gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 
 ::: RFigure  
-![This is a right floating image](imgs/phyphox.png)
+![This is a right floating image](../imgs/phyphox.png)
 :::
 
 It will, however, float to the right of text that follows. Floating figures are best used for tall images, or a figure containing multiple images.
@@ -101,9 +101,9 @@ It will, however, float to the right of text that follows. Floating figures are 
 
 
 :::LFigure
-![The relationship between x and t is constant](imgs/Constant.png)
-![The relationship between x and t is linear](imgs/Linear.png)
-![The relationship between x and t is quadratic](imgs/Quad.png)
+![The relationship between x and t is constant](../imgs/Constant.png)
+![The relationship between x and t is linear](../imgs/Linear.png)
+![The relationship between x and t is quadratic](../imgs/Quad.png)
 :::
 
 You might worry that the images appear too small when multiple are in a figure, but the website automatically compiles *modals*. These are frames that pop up to show full-size media when clicked. Go ahead and click on of the images.
@@ -169,12 +169,12 @@ Within this, we can designate how many columns each part of the figure should ta
 ```
 ::::::Figure
 :::col l6
-![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
+![Part A: Unobstructed view](../imgs/HP_MotionGraphs_Download.png)
 
 Part A: This figure takes up 6 of 12 rows
 :::
 :::col l6 
-![](imgs/HP_MotionGraphs_Annotated.png)
+![](../imgs/HP_MotionGraphs_Annotated.png)
 
 Part B:This figure takes up 6 of 12 rows
 :::
@@ -182,12 +182,12 @@ Part B:This figure takes up 6 of 12 rows
 ```
 ::::::Figure
 :::col l6
-![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
+![Part A: Unobstructed view](../imgs/HP_MotionGraphs_Download.png)
 
 Part A: This figure takes up 6 of 12 rows
 :::
 :::col l6 
-![](imgs/HP_MotionGraphs_Annotated.png)
+![](../imgs/HP_MotionGraphs_Annotated.png)
 
 Part B:This figure takes up 6 of 12 rows
 :::
@@ -376,7 +376,7 @@ To nest elements, you must include additional colons for each level of nesting w
 In this exercise, you will do stuff.
 
 ::: Figure
-![explanatory image](imgs/calibration.gif)
+![explanatory image](../imgs/calibration.gif)
 :::
 
 ::::::Question
@@ -393,14 +393,14 @@ Look at the image below and write the first word that comes to mind
 In this exercise, you will do stuff.
 
 ::: Figure
-![explanatory image](imgs/calibration.gif)
+![explanatory image](../imgs/calibration.gif)
 :::
 
 ::::::Question
 Look at the image below and write the first word that comes to mind
 
 :::Figure
-![it dips](imgs/dip_gif.gif)
+![it dips](../imgs/dip_gif.gif)
 :::
 ::::::
 :::::::::

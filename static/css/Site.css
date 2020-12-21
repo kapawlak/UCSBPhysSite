@@ -2,8 +2,7 @@
 body {
     counter-reset: question exercise figure equation table simulation video foot;  
     font-size: medium;
-    line-height: 1.7;
-}
+    }
 
 @media (max-width:601px){
   body {font-size: small!important;}
@@ -107,6 +106,7 @@ h1::before, h2::before {
   text-align: left;
   text-rendering: optimizeSpeed;
   padding-left:20px;
+  line-height: 1.7
 }
 
 /* Make sure figure images don't blow up */

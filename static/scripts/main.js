@@ -3,7 +3,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var linkfile = urlParams.get('linkfile')
 if (linkfile == null) {
-  linkfile = 'welcome'
+  linkfile = 'courseinfo'
 }
 
 //Equation list
@@ -17,7 +17,7 @@ function includeHTML(filenum = linkfile) {
   /*loop through a collection of all HTML elements:*/
   z = document.getElementById("mdcontent");
 
-  file = filenum + ".md"
+  file = "../" + filenum + ".md"
 
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
@@ -102,9 +102,7 @@ function htmltweaks() {
   for (i = 0; i < links.length; i++) {
     var linkcode = links[i].innerText;
     var identifyit=linkcode + '_' + links[i].hash.slice(4)
-    console.log('id= ',identifyit, ' ---linkcode: ', linkcode, ' ---RL[lc]:', RefList[linkcode])
     if (RefList[linkcode]!=null) {
-      console.log('entered with lc= ', linkcode)
       num = RefList[linkcode].findIndex(e => e == identifyit )
       if(num>0){
         console.log('found ',identifyit)
@@ -132,7 +130,7 @@ function htmltweaks() {
       this.firstElementChild.classList.toggle('vshaker')
 
     });
-    console.log('touched \n\n',coll[i].parentElement.previousElementSibling.innerHTML)
+  
   }
     var warn = document.getElementsByClassName("Warning");
 

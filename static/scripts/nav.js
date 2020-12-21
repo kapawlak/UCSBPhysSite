@@ -6,7 +6,7 @@ function init_nav() {
     const hideclass = '" class="w3-bar-item w3-button w3-hover-white w3-hide-small w3-hide-medium"  onclick="changepage()">'
     const end = '</a> '
     const sideclass = '" class="w3-bar-item w3-button w3-hover-white" onclick="changepage()">'
-    fetch("nav.json")
+    fetch("../nav.json")
         .then(response => {
             return response.json();
         })
