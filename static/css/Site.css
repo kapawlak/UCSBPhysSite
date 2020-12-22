@@ -41,8 +41,9 @@ h1 {
 h2{
   color: black!important;
   font-size: 175%;
-  padding:1px 0px; 
+  padding:70px 0px 20px 0px; 
   margin-left: 20px;
+  margin-top:-50px;
   display: block;
   clear: both;
 }
@@ -63,8 +64,8 @@ h2{
 h1::before, h2::before {
   display: block;
   content: " ";
-  height: 60px;
-  margin-top: -60px;
+  height: 80px;
+  margin-top: -80px;
   visibility: hidden;
 }
 
@@ -440,7 +441,8 @@ text-align: center;
   white-space: pre-wrap;
   font-size: smaller;
   width:80%;
-  margin:auto;
+  margin:20px auto;
+  text-align: left;
 }
 
 #mdcontent pre::before{

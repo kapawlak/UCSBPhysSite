@@ -6,46 +6,16 @@ if (linkfile == null) {
   linkfile = 'courseinfo'
 }
 
-//Equation list
-var RefList = { Eq: ['Equation'], Qu: ['Question'] }
+//Reference object
+var RefList = {}
 
-
-
-
-function includeHTML(filenum = linkfile) {
-  var z, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementById("mdcontent");
-
-  file = "../" + filenum + ".md"
-
-  if (file) {
-    /*make an HTTP request using the attribute value as the file name:*/
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4) {
-        if (this.status == 200) { z.innerHTML = doRendering(this.responseText); updateRoutine() }
-        if (this.status == 404) { z.innerHTML = "<h1>This lab is not available yet!</h1>"; }
-     
-        /*remove the attribute, and call this function once more:*/
-      }
-    }
-    xhttp.open("GET", file, true);
-    xhttp.send();
-    /*exit the function:*/
-    return;
-  }
-
-
-};
-
+//Function to run on page change
 function changepage(file) {
   urlParams.set("linkfile", file);
   includeHTML(file)
 }
 
-
-
+//Updates to do after mardown rendering. Order is important here
 function updateRoutine() {
   renderMathInElement(document.body, {
     delimiters: [
@@ -60,62 +30,38 @@ function updateRoutine() {
   tableOfContents('[data-toc]', '[data-content]')
   setLightBox()
   navbar_close()
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+//Goes through nodes and makes some changes
 function htmltweaks() {
-  //name headers
-  headers = document.querySelectorAll("#mdcontent > h1");
-  for (i = 0; i < headers.length; i++) {
-    elmnt = headers[i];
-    if (i > 0) {
-      elmnt.innerHTML = "Part " + romanize(i) + ": " + elmnt.innerHTML
+
+  //Reset references list
+  RefList = { Eq: ['Equation'], Qu: ['Question'], Fi: ['Figure'], Si: ['Simulation'], Ex: ['Exercise'] }
+
+  for (const property in RefList) {
+    elist = document.getElementsByClassName(`${RefList[property]}`)
+    for (j = 0; j < elist.length; j++) {
+      RefList[property].push(elist[j].id)
     }
-    //elmnt.classList.toggle('w3-row')
-
-    elmnt.id = "part" + i;
   }
 
-  RefList = { Eq: ['Equation'], Qu: ['Question'] }
-  eqlist = document.getElementsByClassName('Equation')
-  for (i = 0; i < eqlist.length; i++) {
-    RefList.Eq[i+1]=eqlist[i].id
-  }
-  qulist = document.getElementsByClassName('Question')
-  for (i = 0; i < eqlist.length; i++) {
-    RefList.Qu[i+1]=qulist[i].id
-  }
-  
   var links = document.querySelectorAll('#mdcontent a')
   for (i = 0; i < links.length; i++) {
     var linkcode = links[i].innerText;
-    var identifyit=linkcode + '_' + links[i].hash.slice(4)
-    if (RefList[linkcode]!=null) {
-      num = RefList[linkcode].findIndex(e => e == identifyit )
-      if(num>0){
-        console.log('found ',identifyit)
-      links[i].innerHTML = `${RefList[linkcode][0]} ${num}`
+    var identifyit = linkcode + '_' + links[i].hash.slice(4)
+    if (RefList[linkcode] != null) {
+      num = RefList[linkcode].findIndex(e => e == identifyit)
+      if (num > 0) {
+        links[i].innerHTML = `${RefList[linkcode][0]} ${num}`
       }
     }
   }
 
-
+  //Allows exercises to be collabsible
   var coll = document.getElementsByClassName("collapsible");
   for (i = 0; i < coll.length; i++) {
     const start_height = coll[i].parentElement.previousElementSibling.style.maxHeight
-      coll[i].addEventListener("click", function () {
+    coll[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var content = this.parentElement.previousElementSibling;
       if (content.style.maxHeight != start_height) {
@@ -130,23 +76,18 @@ function htmltweaks() {
       this.firstElementChild.classList.toggle('vshaker')
 
     });
-  
+
   }
-    var warn = document.getElementsByClassName("Warning");
+  //Allows for warnings to be toggled off
+  var warn = document.getElementsByClassName("Warning");
+  for (i = 0; i < warn.length; i++) {
 
-    for (i = 0; i < warn.length; i++) {
+    warn[i].addEventListener("click", function () {
+      this.classList.toggle("hshaker");
+      this.classList.toggle("Warning_muted");
 
-      warn[i].addEventListener("click", function () {
-        this.classList.toggle("hshaker");
-        this.classList.toggle("Warning_muted");
-
-      });
-    }
-
-
-  
-
-
+    });
+  }
 
 }
 
@@ -158,6 +99,7 @@ function navbar_close() {
     }
   }
 }
+
 function romanize(num) {
   var lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 }, roman = '', i;
   for (i in lookup) {
@@ -175,15 +117,9 @@ function replace_tags() {
     emojified = text[i].innerHTML.replaceAll(/(\@)(.*?)(\@)/g, "<i class='fa $2'></i>")
     text[i].innerHTML = emojified
 
-    fnoted= text[i].innerHTML.replaceAll(/\[fn\](.*?)\[\/fn\]/g, "<span class= 'tooltip'><sup>]</sup><span class ='tooltiptext'>$1</span></span>")
+    fnoted = text[i].innerHTML.replaceAll(/\[fn\](.*?)\[\/fn\]/g, "<span class= 'tooltip'><sup>]</sup><span class ='tooltiptext'>$1</span></span>")
     text[i].innerHTML = fnoted
   }
-
-  
-
-
-
-
 }
 
 

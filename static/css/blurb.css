@@ -61,7 +61,7 @@ ul, ol {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size:larger!important; 
-}
+ }
 .w3-card header h3{
   font-weight: bolder;
   font-size:larger;
@@ -89,12 +89,12 @@ ul, ol {
 }
 .slideopen{
   overflow: hidden;
-  max-height: 10.7em;
+  max-height: 8.7em;
   transition: max-height 1s ease-out!important;
 }
 .preview-hide{
   --box-shadow-color : white;
-  box-shadow:  0px -1em 5em 5em var(--box-shadow-color);
+  box-shadow:  0px -1em 3em 3em var(--box-shadow-color);
   transition: opacity 1s ease-out!important;
 }
 .preview-show{
@@ -139,6 +139,9 @@ ul, ol {
   margin: 20px 1em;
 }
 
+.Exercise hr{
+  border-top: 1px solid #999999;
+}
 /*********************************************************************************/
 /* Simulation box formats */
 .Simulation{  
@@ -217,7 +220,10 @@ ul, ol {
   margin: 0px 20px;
   max-width: calc(100% - 60px);
 }
-.Question ol p{
+.Question p{
+  text-align: center;
+}
+.Question ol>p{
   margin-left:0px!important;
   text-align: left;
 }
@@ -258,7 +264,7 @@ ul, ol {
   }
 
 /*********************************************************************************/
-/* warning box formats */
+/* Warning box formats */
 .Warning{
   cursor: pointer;
 }
@@ -303,6 +309,21 @@ ul, ol {
   }
 }
 
+/*********************************************************************************/
+/* Hider box formats */
+
+.Hider h3{
+  font-weight: normal!important;
+  font-size: 100%!important;
+}
+
+.Hider .slideopen{
+  max-height:0px;
+}
+.Hider .preview-hide{
+  box-shadow:  0px 0px white;
+}
+
 
 /*********************************************************************************/
 /* Video box formats */
@@ -342,6 +363,7 @@ ul, ol {
     margin-bottom: 30px;
     overflow-x:scroll;
     text-align: center;
+    display: inline-block;
   }
   .Table .w3-container{
     margin:0px;
@@ -353,13 +375,14 @@ ul, ol {
       
   }
   .Table table {
-    width: 100%;
-    margin:auto;
+    max-width: 100%;
+    margin: auto;
+    padding: 10px 10px;
     font-size: smaller;
     text-align: center; 
   }
   th, td {
-    padding:5px
+    padding:10px 5px
   }
   th{
     border-radius: 2px;
@@ -381,31 +404,31 @@ ul, ol {
 /* All Figures */
 
 .Fig{
-  border: 2px #646464 solid!important;
-  border-radius: 8px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 100%;
-  font-weight: bolder;
-  margin: 30px auto;
-  text-align: center;
+  margin: 0.2em auto;
   position: relative;
-  padding: 2em 1em;
   display: inline-block;
-  max-width: 100%;
+  max-width: 80%;
   clear: both;
 }
 
-
-
-.Fig:after{
-  clear: both!important;
-  font-size: larger;
-  border-radius: 5px;
-  font-family: "Segoe UI",Arial,sans-serif;
-  padding: 5px 15px;
-  text-align: center;
+.Fig footer{
+  margin-top:15px;
+ 
 }
 
+.Fig footer h3::after{
+  counter-increment: figure;
+  content: counter(figure);
+  display:inline!important;
+}
+
+.Fig img{
+  max-width: 100%;
+ }
+
+.Fig .w3-container{
+  overflow: hidden!important;
+}
 
 /* Wide figures */
 /* Regular full size figure */
@@ -421,80 +444,68 @@ ul, ol {
 }
 .Figure img{
   vertical-align: middle;
-  max-width: 70%;
-  max-height:20em;
- }
+  }
 
-
-.Figure::after{
-  counter-increment: figure;
-  content: "\A Figure " counter(figure);
-  background-color:#646464!important;
-  position: relative;
-  bottom:-50px;
-  /* left:calc(50% - 50px); */
-  color: white;
- 
-}
 
 
 /* Figure Float right/left */
 
-.RFigure, .LFigure{     
-  padding: 20px 10px;
-  display: inline-block;
-  margin: 30px auto;
-  width: 100%!important; 
-}
 
-.RFigure img, .LFigure img{
-  vertical-align: middle;
-  max-height:15em;
- }
-
-.RFigure::after, .LFigure::after{
-  counter-increment: figure;
-  content: "\A Figure " counter(figure);
-  background-color:#646464!important;
-  color: white;
-  position: absolute;
-  bottom:-20px;
-  left:calc(50% - 60px);
-  max-height: 50px;
- 
-}
 
 
 
 @media (min-width:993px){
+.active-center{
+  text-align: unset;
+}
+
 .RFigure{ float: right;
  
-  margin-right: 10px !important;
-  margin-left: 20px !important;
-  margin-top:10px!important;
+  margin-right: 0.4em !important;
+  margin-left: 0.8em !important;
  
 }
 
 .LFigure{ float: left;
  
-  margin-right: 20px !important;
-  margin-left: 10px !important;
-  margin-top:10px!important;
- 
-}
-
-.LFigure , .RFigure{
-  max-width: 350px;
+  margin-right: 0.8em !important;
+  margin-left: 0.4em !important;
  
 }
 
 .RFigure img, .LFigure img{
-  vertical-align: middle;
-  margin:auto
+  display: block;
+}
+
+ .xs img{
+  max-width:10em;
+  max-height:10em;
  }
+ 
+.s img{
+  max-width:15em;
+  max-height:15em;
+  }
 
+.m img{
+  max-width:20em;
+  max-height:20em;
+}
 
+.l img{
+  max-width:25em;
+  max-height:25em;
+}
 
+.xl img{
+  max-width:40em;
+  max-height:40em;
+}
+.Fig img{
+  object-fit: cover;
+  object-position: 50% 50%;
+  max-width:100%; 
+}
 }
 
 

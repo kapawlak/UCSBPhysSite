@@ -52,7 +52,7 @@ function collapsible(tokens, idx, regmatch, type) {
             label = 'unset_' + unset_id
             unset_id++;
         }
-        return dv(['w3-row']) + dv(['w3-card', type])
+        return dv(['w3-row'], id = LTR + '-' + label) + dv(['w3-card', type], id = LTR + '_' + label)
             + `<header class="w3-container"><h3>` + type + '</h3></header>' +
             dv(["w3-container", "slideopen"])
     } else {                                               // This places a closing tag
@@ -73,6 +73,43 @@ function quicknote(tokens, idx, type, extra = '') {
         return '</div>' + spacer + '</div>'
     }
 }
+
+
+function hidernote(tokens, idx, type, extra = '') {
+    var m = tokens[idx].info.trim().match(/^Hider(.*)$/);
+    if (tokens[idx].nesting === 1) {
+        label = md.utils.escapeHtml(m[1]).trim();
+        return dv(['w3-row']) + spacer + dv(["w3-col", "s12 m8 l8", "w3-center"]) + dv(["w3-card", type, extra]) +
+            '<header class="w3-container"> <h3> ' + label + '</h3> </header>' + dv(['w3-container', 'slideopen'])
+    } else {
+        // This places a closing tag
+        return `</div><footer class="w3-container preview-hide"><button type="button" class="collapsible"><i class="fa fa-chevron-down vshaker"></i></button> </footer> </div></div>`
+            + spacer + "</div>"
+    }
+}
+
+//Figure cards
+
+function figurecard(tokens, idx, regmatch, type) {
+    ///process variables
+
+    var LTR = 'Fi'
+    ///form div
+    var m = tokens[idx].info.trim().match(regmatch);
+    if (tokens[idx].nesting === 1) {    // This places an opening tag
+        label = md.utils.escapeHtml(m[1]).trim().split(' ')[0]
+        size = md.utils.escapeHtml(m[1]).trim().split(' ')[1]
+        if (label == '') {
+            label = 'unset_' + unset_id
+            unset_id++;
+        }
+        return dv(['w3-center', 'active-center'], id = LTR + '-' + label) +
+            dv(['w3-card', 'Fig', type, size], id = LTR + '_' + label) + dv(['w3-container'])
+    } else {                                               // This places a closing tag
+        return '</div>' + '<footer class="w3-container"><h3>Figure </h3></footer>' + '</div></div>'
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Short Blurbs
@@ -100,7 +137,9 @@ md.use(container, 'Simulation', {
     render: function (tokens, idx) {
         return collapsible(tokens, idx, /^Simulation(.*)$/, 'Simulation')
     }
-})
+});
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -117,20 +156,22 @@ md.use(container, 'Warning', {
     }
 })
 
+md.use(container, 'Hider', {
+    render: function (tokens, idx) {
+        return hidernote(tokens, idx, 'Hider')
+    }
+});
+
+
 /////////////////////////////////////////////////////////////////////////////////
 //Figures
 
 // Full Width Figure
 md.use(container, 'Figure', {
     render: function (tokens, idx) {
-        if (tokens[idx].nesting === 1) {
-            // This places an opening tag
-            return '<div class="w3-center"><div class=" Figure Fig">';
 
-        } else {
-            // This places a closing tag
-            return '</div></div>'
-        }
+        return figurecard(tokens, idx, /^Figure(.*)$/, 'Figure')
+
     }
 });
 
@@ -138,13 +179,7 @@ md.use(container, 'Figure', {
 md.use(container, 'RFigure', {
 
     render: function (tokens, idx) {
-        if (tokens[idx].nesting === 1) {
-            // opening tag
-            return '<div class="RFigure Fig w3center">';
-
-        } else {
-            return '</div>'
-        }
+        return figurecard(tokens, idx, /^RFigure(.*)$/, 'RFigure')
     }
 });
 
@@ -152,13 +187,8 @@ md.use(container, 'RFigure', {
 md.use(container, 'LFigure', {
 
     render: function (tokens, idx) {
-        if (tokens[idx].nesting === 1) {
-            // opening tag
-            return '<div class="LFigure Fig ">';
+        return figurecard(tokens, idx, /^LFigure(.*)$/, 'LFigure')
 
-        } else {
-            return '</div>'
-        }
     }
 });
 
@@ -249,6 +279,9 @@ md.use(container, 'row', {
 });
 
 
+
+
+//Rendererfunc
 function doRendering(md_text) {
     var markdown = md_text;
     return md.render(markdown);
@@ -256,4 +289,29 @@ function doRendering(md_text) {
 
 
 
+// Parse Markdown
+function includeHTML(filenum = linkfile) {
+    var z, xhttp;
+    /*loop through a collection of all HTML elements:*/
+    z = document.getElementById("mdcontent");
 
+    file = "../" + filenum + ".md"
+
+    if (file) {
+        /*make an HTTP request using the attribute value as the file name:*/
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) { z.innerHTML = doRendering(this.responseText); updateRoutine() }
+                if (this.status == 404) { z.innerHTML = "<h1 id='part0'>This lab is not available yet!</h1>"; }
+
+                /*remove the attribute, and call this function once more:*/
+            }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /*exit the function:*/
+        return;
+    }
+
+};

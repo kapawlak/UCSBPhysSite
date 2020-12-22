@@ -7,6 +7,15 @@
  * @param  {Object} options An object of user options [optional]
  */
 var tableOfContents = function (content, target, options) {
+	//name headers and give special IDs
+	headers = document.querySelectorAll("#mdcontent > h1");
+	for (i = 0; i < headers.length; i++) {
+		elmnt = headers[i];
+		if (i > 0) {
+			elmnt.innerHTML = "Part " + romanize(i) + ": " + elmnt.innerHTML
+		}
+		elmnt.id = "part" + i;
+	}
 
 	//
 	// Variables
@@ -126,32 +135,32 @@ var tableOfContents = function (content, target, options) {
 		toc.innerHTML =
 			'<' + settings.headingLevel + ' class="w3-bar-item">' + settings.heading + '</' + settings.headingLevel + '>' +
 			'<' + settings.listType + '>' +
-				Array.prototype.map.call(headings, function (heading, index) {
+			Array.prototype.map.call(headings, function (heading, index) {
 
-					// Add an ID if one is missing
-					createID(heading);
+				// Add an ID if one is missing
+				createID(heading);
 
-					// Check the heading level vs. the current list
-					var currentLevel = heading.tagName.slice(1);
-					var levelDifference = currentLevel - level;
-					level = currentLevel;
-					var html = getStartingHTML(levelDifference, index);
+				// Check the heading level vs. the current list
+				var currentLevel = heading.tagName.slice(1);
+				var levelDifference = currentLevel - level;
+				level = currentLevel;
+				var html = getStartingHTML(levelDifference, index);
 
-					// Generate the HTML
-					html +=
-						//'<li>' +
-							'<a class="w3-bar-item w3-button w3-hover-black" href="#' + heading.id + '">' +
-								heading.innerHTML.trim() +
-							'</a>';
+				// Generate the HTML
+				html +=
+					//'<li>' +
+					'<a class="w3-bar-item w3-button w3-hover-black" href="#' + heading.id + '">' +
+					heading.innerHTML.trim() +
+					'</a>';
 
-					// If the last item, close it all out
-					if (index === len) {
-						html += getOutdent(Math.abs(startingLevel - currentLevel));
-					}
+				// If the last item, close it all out
+				if (index === len) {
+					html += getOutdent(Math.abs(startingLevel - currentLevel));
+				}
 
-					return html;
+				return html;
 
-				}).join('') +
+			}).join('') +
 			'</' + settings.listType + '>';
 	};
 
@@ -169,7 +178,8 @@ var tableOfContents = function (content, target, options) {
 		if (!headings.length) {
 			console.log('nonefound')
 			toc.innerHTML = "none found"
-			return;}
+			return;
+		}
 
 		// Inject the table of contents
 		injectTOC();

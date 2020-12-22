@@ -19,14 +19,7 @@ md.use(container, 'Figure:Simulation', {
 
 md.use(container, 'Figure:Figure', {
     render: function (tokens, idx) {
-        if (tokens[idx].nesting === 1) {
-            // This places an opening tag
-            return '<div class="w3-center"><div class=" Figure Fig">';
-
-        } else {
-            // This places a closing tag
-            return '</div></div>'
-        }
+        return figurecard(tokens, idx, /^Figure(.*)$/, 'Figure')
     }
 });
 
