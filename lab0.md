@@ -13,7 +13,7 @@
 
 
 :::RFigure
-![The Phyphox Phone App in the iOS store](imgs/phyphox.png)
+![The Phyphox Phone App in the iOS store](../imgs/phyphox.png)
 :::
 
 In this intro lab, [google](google.com) we will learn how to use the phyphox app to take useful data. You can download the app from their [website](https://phyphox.org/). 
@@ -129,7 +129,7 @@ By observing how $B_z$ changes with the vertical motion of the magnet, you shoul
 
 
 :::RFigure
-  ![The magnetic field of a bar magnet has the characteristic of a 'dipole', where its strength falls off more slowly in the direction perpendicular to its polarized axis.](imgs/BarMagnetFieldFRONT.png)
+  ![The magnetic field of a bar magnet has the characteristic of a 'dipole', where its strength falls off more slowly in the direction perpendicular to its polarized axis.](../imgs/BarMagnetFieldFRONT.png)
 :::
 
 In the last exercise, we asked you to identify the poles of your permanent magnet and make some qualitative observations about how field strength behaves as you move the magnet above the magnetometer. 
@@ -164,7 +164,7 @@ As your final exercise in getting familiar with the magnetometer, you will attem
 6. Double the distance to 1 cm, 2 cm, 4 cm, and record 1 second of data each.
 7. Export the data. For each measurement made above, calculate the average of the 1-second interval, and record the average field strength and the distance of the measurement in a table.
 :::Figure
-![](imgs/setup.png)
+![](../imgs/setup.png)
 :::
 
 :::Question 

@@ -53,14 +53,16 @@ Generate your Material List quickly with the following Code:
 
 ## @fa-line-chart@ Figures
 
-Figures generally contain images and have three types. The simplest will generate a full figure which breaks the text. The individual image inside is limited to be 400px tall.
+Figures and generally contain images. They are automatically numbered, nameable and have three types. The simplest will generate a full row div which breaks the text. 
+
+
 ``` 
-::: Figure  
-![This is an image](imgs/Balls2.png)
+::: Figure optional-name optional-size
+![This is an image](..\imgs\Balls2.png)
 :::
 ``` 
-::: Figure  
-![This is an image](imgs/Balls2.png)
+::: Figure balls 
+![This is an image](..\imgs\Balls2.png)
 :::
 
 To improve visual variety you can also make right and left floating figures, respectively. These will float to the right(left) of any text that *follows* it.
@@ -68,8 +70,8 @@ To improve visual variety you can also make right and left floating figures, res
 
 Right:
 ``` 
-::: RFigure
-![This is a right floating image](imgs/phyphox.png)
+::: RFigure optional-name optional-size
+![This is a right floating image](../imgs/phyphox.png)
 :::
 ``` 
 
@@ -77,10 +79,10 @@ Right:
 
 Left: 
 ``` 
-::: LFigure
-![The relationship between x and t is constant](imgs/Constant.png)
-![The relationship between x and t is linear](imgs/Linear.png)
-![The relationship between x and t is quadratic](imgs/Quad.png)
+::: LFigure optional-name optional-size
+![The relationship between x and t is constant](../imgs/Constant.png)
+![The relationship between x and t is linear](../imgs/Linear.png)
+![The relationship between x and t is quadratic](../imgs/Quad.png)
 :::
 ``` 
 
@@ -89,8 +91,8 @@ The figure will not float next to this text because the text is placed above the
 
 <p style="color:gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 
-::: RFigure  
-![This is a right floating image](imgs/phyphox.png)
+::: RFigure phyphox m
+![This is a right floating image](../imgs/phyphox.png)
 :::
 
 It will, however, float to the right of text that follows. Floating figures are best used for tall images, or a figure containing multiple images.
@@ -100,10 +102,10 @@ It will, however, float to the right of text that follows. Floating figures are 
 <p style="color:gray">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
 
 
-:::LFigure
-![The relationship between x and t is constant](imgs/Constant.png)
-![The relationship between x and t is linear](imgs/Linear.png)
-![The relationship between x and t is quadratic](imgs/Quad.png)
+::: LFigure graphs xs
+![The relationship between x and t is constant](../imgs/Constant.png)
+![The relationship between x and t is linear](../imgs/Linear.png)
+![The relationship between x and t is quadratic](../imgs/Quad.png)
 :::
 
 You might worry that the images appear too small when multiple are in a figure, but the website automatically compiles *modals*. These are frames that pop up to show full-size media when clicked. Go ahead and click on of the images.
@@ -113,8 +115,110 @@ You might worry that the images appear too small when multiple are in a figure, 
 <p style="color:gray">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
 
 
-### Figures: Advanced
+## Figures: Advanced
 
+### Sizing
+
+To ensure that Figures look nice on large screens, one can specify a maximum size. These sizes, {xs, s, m ,l ,xl} are computed relative to the font size and constrain the height and width of an image to a square. The figures in the excercise below show variants of [Fi](#Fi-balls) with each size
+
+:::::: Exercise
+
+```
+::: Figure ball-o 
+![This is an image](..\imgs\Balls2.png)
+**Original**
+:::
+```
+::: Figure ball-o 
+![This is an image](..\imgs\Balls2.png)
+
+**Original**
+:::
+
+---
+
+
+```
+::: Figure ball-xs xs 
+![This is an image](..\imgs\Balls2.png)
+
+**xs**
+:::
+
+```
+
+::: Figure ball-xs xs 
+![This is an image](..\imgs\Balls2.png)
+
+**xs**
+:::
+
+---
+
+```
+::: Figure ball-s s 
+![This is an image](..\imgs\Balls2.png)
+
+**s**
+:::
+```
+
+::: Figure ball-s s 
+![This is an image](..\imgs\Balls2.png)
+
+**s**
+:::
+
+---
+```
+::: Figure ball-m m 
+![This is an image](..\imgs\Balls2.png)
+
+**m**
+:::
+
+```
+
+::: Figure ball-m m 
+![This is an image](..\imgs\Balls2.png)
+
+**m**
+:::
+
+---
+
+```
+::: Figure ball-l l 
+![This is an image](..\imgs\Balls2.png)
+
+**l**
+:::
+```
+::: Figure ball-l l 
+![This is an image](..\imgs\Balls2.png)
+
+**l**
+:::
+
+---
+```
+
+::: Figure ball-xl xl 
+![This is an image](..\imgs\Balls2.png)
+
+**xl**
+:::
+```
+
+::: Figure ball-xl xl 
+![This is an image](..\imgs\Balls2.png)
+
+**xl**
+:::
+::::::
+
+
+### Columnation
 In order to accomodate a row of images, the site makes use of W3.CSS standard columnization. Each full figure generates a row div class containing 12 equally sized columns. These are visualized in the figure below
 
 ::::::Figure
@@ -156,11 +260,6 @@ C11
 C12
 :::
 
-
-
-
-
-
 ::::::
 
 
@@ -169,12 +268,12 @@ Within this, we can designate how many columns each part of the figure should ta
 ```
 ::::::Figure
 :::col l6
-![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
+![Part A: Unobstructed view](../imgs/HP_MotionGraphs_Download.png)
 
 Part A: This figure takes up 6 of 12 rows
 :::
 :::col l6 
-![](imgs/HP_MotionGraphs_Annotated.png)
+![](../imgs/HP_MotionGraphs_Annotated.png)
 
 Part B:This figure takes up 6 of 12 rows
 :::
@@ -182,12 +281,12 @@ Part B:This figure takes up 6 of 12 rows
 ```
 ::::::Figure
 :::col l6
-![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
+![Part A: Unobstructed view](../imgs/HP_MotionGraphs_Download.png)
 
 Part A: This figure takes up 6 of 12 rows
 :::
 :::col l6 
-![](imgs/HP_MotionGraphs_Annotated.png)
+![](../imgs/HP_MotionGraphs_Annotated.png)
 
 Part B:This figure takes up 6 of 12 rows
 :::
@@ -224,7 +323,7 @@ Are you following along with this tutorial?
 :::
 ```
 
-:::Question areyou
+:::Question following
 Are you following along with this tutorial?
 :::
 
@@ -242,13 +341,13 @@ Questions with multiple subparts are automatically labeled with lower-case lette
 2. How would this result change if $M$ was a manifold of genus 2? Discuss
 :::
 
-[Qu](#Qu-areyou)
+
 ## @fa-sitemap@ Exercises
 
 Exercises are another important call-to-action for students. They act as a stand alone prompt with step-by-step instructions for completing part of a lab. They are automatically numbered and occur in full-width boxes so that any figures or questions within have sufficient readability.
 
 ```
-:::::: Exercise
+:::::: Exercise optional-name
 Firstly, let's measure the direction of magnetic field from the  magnet.
 **Measurement steps:**
 1. Put your phone on the table and open the phyphox app and go to “magnetometer”. You can see there are three plots, representing $B_x$,  $B_y$ and $B_z$.
@@ -264,7 +363,7 @@ Firstly, let's measure the direction of magnetic field from the  magnet.
 ::::::
 ```
 
-:::::: Exercise
+:::::: Exercise magnetic-field
 Firstly, let's measure the direction of magnetic field from the  magnet.
 **Measurement steps:**
 1. Put your phone on the table and open the phyphox app and go to “magnetometer”. You can see there are three plots, representing $B_x$,  $B_y$ and $B_z$.
@@ -295,6 +394,19 @@ Videos can be added directly via iframe since html is enabled. Use the Video con
 :::
 
 ## @fa-space-shuttle@ Simulations
+
+
+Simulations work the same as everything else, and collapse to save space when they aren't needed:
+
+```
+::: Simulation optional-name
+<iframe src="https://kapawlak.github.io/PhDemoJS/Apps/BiotSavart_Current_Line/Biot_Savart.html" width= "100%" height="650" style="border:none;"></iframe>
+:::
+```
+
+::: Simulation long-wire
+<iframe src="https://kapawlak.github.io/PhDemoJS/Apps/BiotSavart_Current_Line/Biot_Savart.html" width= "100%" height="650" style="border:none;"></iframe>
+:::
 
 ## @fa-warning@ Notes, Warnings, Tables
 
@@ -356,16 +468,34 @@ Tables are as usual, and will fill the entire width available. If the width is n
 
 Linking allows you to reference previous named material, autogenerating a link to the place on the page it is located and the correct description of the item. The syntax is `[Eq](#Eq-gbt)`
 
-```
-[Eq](#Eq-gbt) is a link to the Gauss-Bonnet Theorem
+:::Figure
 
-``` 
+`[Eq](#Eq-gbt) is an Equation link to the Gauss-Bonnet Theorem`
 
-[Eq](#Eq-gbt) is a link to the Gauss-Bonnet Theorem.
+[Eq](#Eq-gbt) is an Equation link to the Gauss-Bonnet Theorem
 
-To name an equation, simply provide a name directly after the Equation declaration (on the same line)
+`[Qu](#Qu-following) is a Question link to the "Are you following?" question`
 
-Eventually you will be able to link to any special element.
+[Qu](#Qu-following) is a Question link to the "Are you following?" question
+
+
+`[Fi](#Fi-balls) is a Figure link to the balls figure`
+
+[Fi](#Fi-balls) is a Figure link to the balls figure
+
+
+`[Ex](#Ex-magnetic-field) is an Exercise link to the Magnetic Strength Exercise` 
+
+[Ex](#Ex-magnetic-field) is an Exercise link to the Magnetic Strength Exercise
+
+`[Si](#Si-long-wire) is a Simulation link to the Biot Savart Simulation ` 
+
+[Si](#Si-long-wire) is a Simulation link to the Biot Savart Simulation
+
+To name a Figure, Equation, Question, Exercise or Simulation element, simply provide a name directly after the declaration (on the same line). 
+
+:::
+
 
 ## Nested Elements
 
@@ -376,7 +506,7 @@ To nest elements, you must include additional colons for each level of nesting w
 In this exercise, you will do stuff.
 
 ::: Figure
-![explanatory image](imgs/calibration.gif)
+![explanatory image](../imgs/calibration.gif)
 :::
 
 ::::::Question
@@ -393,14 +523,14 @@ Look at the image below and write the first word that comes to mind
 In this exercise, you will do stuff.
 
 ::: Figure
-![explanatory image](imgs/calibration.gif)
+![explanatory image](../imgs/calibration.gif)
 :::
 
 ::::::Question
 Look at the image below and write the first word that comes to mind
 
 :::Figure
-![it dips](imgs/dip_gif.gif)
+![it dips](../imgs/dip_gif.gif)
 :::
 ::::::
 :::::::::
@@ -431,6 +561,24 @@ Footnotes are automatically numbered and create small popups on the bottom of th
 ```
 
   You can see the effect by hovering over the number[fn]An interesting and informative comment appears here, as if by magic. [http://www.google.com](http://www.google.com)[/fn]. 
+
+## Hider
+
+A Hider is good for letting students check their understanding or condensing a less important block of information. To title the Hider, type something after decalring it *without* a line break.
+
+```
+:::Hider If you drop a magnet down a conducting tube, which direction will the force be applied?
+
+Upwards! Or, more correctly, in the direction opposite of the gravitational force accelerating it
+
+:::
+```
+
+:::Hider If you drop a magnet down a conducting tube, which direction will the force be applied?
+
+Upwards! Or, more correctly, in the opposite direction of the gravitational force accelerating it
+
+:::
 
 
 

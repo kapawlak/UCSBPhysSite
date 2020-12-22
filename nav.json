@@ -1,10 +1,5 @@
 [
     {
-        "name": "Welcome",
-        "file": "welcome",
-        "showSmall": "false"
-    },
-    {
         "name": "Course Info",
         "file": "courseinfo",
         "showSmall": "false"

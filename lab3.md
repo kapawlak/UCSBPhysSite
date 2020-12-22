@@ -34,7 +34,7 @@ These three variables are interrelated, as each quantity tells you about the *ch
 ## 1. Motion with No Forces
 
 :::RFigure
-![](imgs/nov_pos.gif)
+![](../imgs/nov_pos.gif)
 :::
 To make our discussion concrete, we should review some basic physics in the case that there are no forces acting on the body of interest. 
 
@@ -48,10 +48,10 @@ Now we imagine that this ball is given an initial velocity $v_0 = + 10$ m/s by t
 
 ::::::Figure
 :::col l5 m5 s12
-![](imgs/v10_pos.gif)
+![](../imgs/v10_pos.gif)
 :::
 :::col l7 m7 s12
-![](imgs/v10_vel.png)
+![](../imgs/v10_vel.png)
 :::
 ####
 ::::::
@@ -79,12 +79,12 @@ $$
 ::::::Figure
 
 :::col l6 m6 s12
-![](imgs/acc_pos.gif)
+![](../imgs/acc_pos.gif)
 :::
 
 
 :::col l6 m6 s12
-![](imgs/acc_vel.png)
+![](../imgs/acc_vel.png)
 :::
 
 ::::::
@@ -124,11 +124,11 @@ where y is the position, $v_{0y}$ the initial velocity, $a_{y}$ the acceleration
 
 ::::::RFigure
 
-![The relationship between x and t is constant](imgs/Constant.png)
+![The relationship between x and t is constant](../imgs/Constant.png)
 
-![The relationship between x and t is linear](imgs/Linear.png)
+![The relationship between x and t is linear](../imgs/Linear.png)
 
-![The relationship between x and t is quadratic](imgs/Quad.png)
+![The relationship between x and t is quadratic](../imgs/Quad.png)
 
 ::::::
 
@@ -160,11 +160,11 @@ Part A shows the three plots unobstructed. Please notice how the velocity corres
 ::::::Figure
 
 :::col l6 m6 s12
-![Part A: Unobstructed view](imgs/HP_MotionGraphs_Download.png)
+![Part A: Unobstructed view](../imgs/HP_MotionGraphs_Download.png)
 Part A
 :::
 :::col l6 m6 s12
-![](imgs/HP_MotionGraphs_Annotated.png)
+![](../imgs/HP_MotionGraphs_Annotated.png)
 Part B
 :::
 
@@ -177,7 +177,7 @@ Part B indicates points on the plots which correspond to the description of Part
 Now that you have gained familiarity with position, velocity, and acceleration plots we can do analysis. In this exercise you will take a new position plot and create sketches of the velocity and acceleration plots. Please see Figure 6 below.
 
 :::Figure
-![](imgs/PvTSketch.png)
+![](../imgs/PvTSketch.png)
 :::
 
 The dashed lines indicate where the plot changes from one of our above mentioned plot shapes to another. 
@@ -205,7 +205,7 @@ Make sure to take a picture of your sketch plots and include them in your report
 In this section we will look at different balls dropped from the sixth floor walkway of Broida Hall. The four balls dropped in Video 1 are of varying sizes and weights. Figure 7 shows the balls which are dropped. 
 
 :::Figure
-![](imgs/Balls2.png)
+![](../imgs/Balls2.png)
 :::
 
 The pink dog ball is small but fairly weighty for its size. The basket ball is medium sized and also has decent weight to it. The volley ball is smaller than the basket ball and slightly lighter as well. The beach ball is by far the largest and the lightest. These four balls should give a wide range of masses and sizes for our data set. All four balls are dropped, however, you will only be taking data for the basket ball. The data on the other balls have been taken for you. We have annotated Video 1 for you with the height measurements and an embedded stopwatch. These will be useful tools for your data colection.

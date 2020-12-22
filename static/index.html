@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>UCSB Physics</title>
+<meta charset="UTF-8">
+
+<head>
+
+
+
+
+  <!-- W3 CSS standards -->
+  <link rel="stylesheet" href="css\w3.css">
+  <link rel="stylesheet" href="../theme.css">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="css\Site.css">
+  <link rel="stylesheet" href="css\blurb.css">
+
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Color Schemes -->
+  <link rel='stylesheet' href="https://www.w3schools.com/lib/w3-colors-flat.css">
+
+  <!-- Core Markdown Rendering -->
+  <script src="scripts\markdown-it.min.js"></script>
+  <script src="scripts\markdown-it-container.min.js"></script>
+
+
+
+  <!-- Our JS -->
+  <!-- Main Loop -->
+  <script src="scripts\main.js"></script>
+  <!-- Custom Markdown -->
+  <script src="scripts\markdown.js"></script>
+  <!-- Optional: Legacy Markdown Compatibility -->
+  <script src="scripts\markdown-legacy.js"></script>
+
+  <!-- navbar -->
+  <script src="scripts\nav.js"></script>
+
+
+  <!-- The loading of KaTeX -->
+  <link rel="stylesheet" href="css\katex\katex.min.css">
+  <script src="css\katex\katex.min.js"></script>
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script src="css\katex\contrib\auto-render.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+  <!-- Automatically generates ToC -->
+  <script src="scripts/table-of-contents.js"></script>
+
+
+
+</head>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .w3-sidebar {
+    z-index: 3;
+    width: 250px;
+    top: 43px;
+    bottom: 0;
+    height: inherit;
+  }
+</style>
+
+
+
+<body>
+  <!-- Navbar -->
+
+  <script>init_nav()</script>
+  <div class="w3-top" id='topbar'>
+    <div class="w3-bar theme w3-top w3-left-align ">
+      <a class="w3-bar-item w3-button w3-left w3-hide-large w3-hover-white w3-large theme-l1" href="javascript:void(0)"
+        onclick="w3_open()"><i class="fa fa-bars"></i></a>
+      <div id='topnavtarget'>
+      </div>
+      <div class='w3-dropdown-click w3-hide-medium w3-hide-large w3-right'>
+        <a onclick="dropdownlab()" class="w3-bar-item w3-button w3-left w3-hover-white w3-large theme-l1  w3-right"
+          width='100%'><i class="fa fa-bookmark"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Sidebar -->
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-medium theme-l5 w3-animate-left" id="mySidebar"
+    style='width: 350px'>
+    <a href="javascript:void(0)" onclick="w3_close()"
+      class="w3-right w3-large w3-padding-large w3-hover-black w3-hide-large" title="Close Menu"><i
+        class="fa fa-remove"></i>
+    </a>
+    <div data-content id="TOCprint" class="w3-hide w3-show w3-col w3-bar-item"> </div>
+    <button type="button" id="collapsible" class='w3-bar-item w3-cell-bottom' onclick="sidebarFold()">
+      <b>Toggle Chat <i class="fa fa-comments-o"></i></b>
+    </button>
+
+    <div id="chatscreen" class="w3-hide w3-animate-slide w3-bar-item">
+      <div id='nectirbut'>
+        <button class="btn btn-success" style="font-face: 'Source Sans Pro'; 
+      font-weight: bold; font-size: larger; 
+      background-color: #4fa199!important; 
+      border:0px; text-align: center;width:100%;
+       display: block; color:white;" onclick=" window.open('https://ucsb.nectir.io/channel/physics4l')">
+          Go To Nectir Workspace</button>
+      </div>
+      <iframe width="100%" height="100%" frameborder="0" src="https://ucsb.nectir.io/channel/physics4l"
+        webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="microphone; camera"
+        id="chatframe"></iframe>
+
+    </div>
+
+
+
+    </div>
+  </nav>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
+
+
+  <div class="w3-main" style="margin-left:350px;margin-right: 20px;">
+    <div class="w3-row">
+      <div id="lablist" class="w3-dropdown-content  w3-bar-block w3-border w3-hide">
+      </div>
+      <!-- Modal Content -->
+      <div class="image-modal-popup">
+        <div class="wrapper">
+          <span>&times;</span>
+          <img src="" alt="Image Modal">
+          <div class="description">
+            <h3> This is placeholder content</h3>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content goes here -->
+      <div data-toc id="TOC">
+        <div w3-include-html="welcome.md" id="mdcontent"></div>
+      </div>
+    </div>
+  </div>
+  <!-- END MAIN -->
+  <footer>
+    <div id='ILGfooter'>
+
+      <p>© 2020 ILG at the UCSB Physics Department, All Rights Reserved.
+      </p>
+    </div>
+
+  </footer>
+
+
+
+
+
+
+</body>
+
+<script>
+
+
+
+  includeHTML(linkfile)
+
+
+  //Init navigaion
+  var toc = document.getElementById('TOCprint') //TOC
+  var chatframe = document.getElementById('chatframe') //Nectir iframe
+  var chatscreen = document.getElementById('chatscreen') //Nectir container
+  var mySidebar = document.getElementById("mySidebar"); //Sidebar
+  function sidebarFold() {
+    toc.classList.toggle("w3-show");
+    chatscreen.classList.toggle("w3-show");
+  }
+
+
+  // Toggle between showing and hiding the sidebar, and add overlay effect
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
+    }
+  }
+
+  // Close the sidebar with the close button
+  function w3_close() {
+
+    if (window.innerWidth < 993) {
+      console.log("called at ", screen.width)
+      mySidebar.style.display = "none";
+    }
+  }
+
+  function dropdownlab() {
+    var x = document.getElementById("lablist");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+
+
+
+
+
+
+
+
+</script>
+
+</html>

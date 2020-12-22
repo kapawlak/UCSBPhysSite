@@ -1,0 +1,327 @@
+/* This file controls the colorscheme and font only! */
+
+/* COLOR VARIABLES -- Changes globals. You can safely mess with these */
+body{
+
+    /* Change the color theme by picking a color and its light and dark variants */
+    --primary:#009688;
+    --primary-font:#fff;
+    --primary-light:#c0e7df;
+    --primary-light-font:#000;
+    --primary-dark:#326964;
+    --primary-dark-font:#fff;
+
+    /* Change the major, minor and Table fonts */
+    --major-font: "Segoe UI",Arial,sans-serif;
+    --minor-font:'Courier New', Courier, monospace;
+    --table-font: Helvetica, sans-serif; 
+
+    /* Change the appearance of blurb tags and headings */
+    --blurb-label-weight: bolder;
+    --blurb-label-font:larger;
+
+    /* Change Note blocks */
+    --note-bg:#e6dd66;
+    --note-font:#000;
+
+   /* Change Warning blocks */
+    --warning-bg:#ffa835;
+    --warning-icon:#c26e00;
+    --warning-font:#000;
+    --warning-border:5px solid black;
+
+    --warning-muted-bg:#ffe6c5;
+    --warning-muted-border:2px solid black;
+
+    
+
+    /*Quick Themes used randomly around the site*/
+    --l6-font:#000;
+    --l6-bg: #fff;
+
+    --l5-font:#000;
+    --l5-bg: #f0f0f0;
+
+    --l4-font:#000;
+    --l4-bg:#cccccc ;
+
+    --l3-font:#000;
+    --l3-bg:#999999;
+
+    --l2-font:#fff;
+    --l2-bg:#666666;
+
+    --l1-font:#fff;
+    --l1-bg:#333333;
+
+    --d1-font:#fff;
+    --d1-bg:#000000;
+
+    --d2-font:#fff;
+    --d2-bg:#000000 ;
+
+    --d3-font:#fff;
+    --d3-bg:#000000;
+
+    --d4-font:#fff;
+    --d4-bg:#000000;
+
+    --d5-font: #fff;
+    --d5-bg:#000000;
+
+    --text-font: #000;
+    --border-col: #000;
+
+    --hover-font: rgb(0, 0, 0);
+    --hover-bg: #fff;
+}
+
+/************************************************************************************/
+/****Access to Element styles below. Only touch if you know what you're doing!!!!****/
+/************************************************************************************/
+
+/*body background image*/
+body {
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("body.png");
+    background-color: #eee;
+    background-attachment: fixed;
+}
+
+/* Maincontent background is transparent */
+#mdcontent{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+/* Materials */
+
+.Materials{
+    background-color: white;
+}
+.Materials header{  
+    background-color: var(--primary);
+    color:white
+}
+
+.Materials header h3{
+    font-family: var(--minor-font)
+}
+
+
+/*********************************************************************************/
+/* Blurb Settings */
+
+/* Global */
+.roundbox::before, .roundbox::after{
+   font-family: var(--major-font);
+   font-weight: var(--blurb-label-weight);
+   font-size: var(--blurb-label-font); 
+}
+
+/* Equation */
+.Equation{
+    background-color:var(--l4-bg)!important;
+    color:var(--l4-font);
+  }
+
+.Equation::after{
+    background-color:var(--l3-bg)!important;
+    color:var(--l3-font);   
+} 
+
+/*********************************************************************************/
+/* Card Settings */
+
+/* Exercise Card */
+.Exercise{
+    background-color: var(--l5-bg);
+}
+.Exercise .preview-hide{ /*Set the shaddow color the same*/
+    --box-shadow-color:  var(--l5-bg)!important;
+}
+
+.Exercise header, .Exercise footer{
+    background-color: var(--l3-bg);
+    color: var(--l3-font);
+}
+
+/* Simulation Card */
+.Simulation{
+    background-color:var(--primary-light);
+}
+.Simulation .preview-hide{ /*Set the shaddow color the same*/
+    --box-shadow-color: var(--primary-light)!important;
+}
+
+.Simulation header, .Simulation footer{
+    background-color:var(--primary);
+    color: var(--primary-font);
+}
+
+
+/*********************************************************************************/
+/* Note Box */
+
+
+/* Global Box Settings */
+.notebox::before, .notebox::after{
+    font-family: var(--major-font);
+    font-weight: var(--blurb-label-weight);
+    font-size: var(--blurb-label-size); 
+ }
+
+
+/* Notes */
+.Note{
+    background-color:var(--note-bg)!important;
+    color: var(--note-font);
+    transform: rotate(2deg);
+}
+.Note h3{
+    font-weight: bolder!important;
+    font-family: var(--minor-font);
+}
+
+/* Warnings */
+.Warning{
+    background-color:var(--warning-bg);
+    color: var(--warning-font); 
+    border:var(--warning-border);
+    }
+
+.Warning:before{
+    background-color: var(--warning-icon);
+    color:var(--warning-font);
+    border:var(--warning-border);
+  }
+
+
+/* Muted colors after reading */
+.Warning_muted{
+    background-color:var(--warning-muted-bg)!important;
+    border:var(--warning-muted-border);
+    
+}
+.Warning_muted:before{
+    background-color:var(--warning-muted-bg)!important;
+    border:var(--warning-muted-border);
+    font-size: x-large!important;
+    left:calc(50% - 1.3em)!important;
+}
+
+
+/*********************************************************************************/
+/* Figures */
+
+.Fig {
+    background-color: var(--l6-bg)!important;
+    color:var(--l6-font);
+    font-family: var(--minor-font);
+    font-size: 100%;
+    text-align: center;
+  }
+
+
+
+  .Fig>footer>h3{
+    font-weight: var(--blurb-label-weight);
+
+  }
+  .Fig>footer {
+    background-color: var(--l2-bg);
+    color: var(--l2-font)
+  }
+
+/*********************************************************************************/
+/* Misc */
+
+/* Video Card */
+
+.Video{
+    background-color:var(--primary-light);
+    color: var(--primary-light-font);
+}
+.Video header{
+    background-color: var(--primary);
+    color:var(--primary-font);
+}
+
+/* Tables */
+
+.Table{
+    font-family: var(--table-font) 
+}
+
+.Table header{
+    background-color: var(--primary-dark);
+    color:var(--primary-dark-font);
+}
+
+.Table>header>h3{
+    font-size: 100%!important;
+    font-weight: normal!important;
+}
+
+/* Table header row */
+  
+thead > tr > th{
+    background-color: var(--l1-bg)!important;
+    color: var(--l1-font)!important;
+    font-weight: normal!important; 
+    padding: 15px 5px;
+    min-width: 30px;  
+  }
+
+/*Even and odd row coloring*/
+tbody > tr:nth-child(even){background-color:var(--l4-bg)!important}
+tbody > tr:nth-child(odd){background-color:var(--l3-bg)!important}
+
+
+/*Hiders*/
+.Hider > header {
+    background-color: var(--primary-dark);
+    color: var(--primary-font);
+    font-size: 100%!important;
+  }
+
+  .Hider > footer {
+    background-color: var(--primary-dark);
+    color: var(--primary-font);
+    font-size: 100%!important;
+  }
+
+/*********************************************************************************/
+/* Animation -- set iteration to 0 to disable */
+
+.vshaker{ /*Applies expand arrows*/
+    animation-iteration-count: infinite;
+  }
+
+.hshaker{ /*Applies to Warnings*/
+    animation-iteration-count: infinite;
+  }
+
+
+
+
+ /* default theme elements */
+.theme-l5 {color: var(--l5-font) !important; background-color:var(--l5-bg) !important}
+.theme-l4 {color: var(--l4-font) !important; background-color:var(--l4-bg) !important}
+.theme-l3 {color: var(--l3-font) !important; background-color:var(--l3-bg)  !important}
+.theme-l2 {color: var(--l2-font) !important; background-color:var(--l2-bg) !important}
+.theme-l1 {color: var(--l1-font) !important; background-color:var(--l1-bg)  !important}
+.theme-d1 {color: var(--d1-font) !important; background-color:var(--d1-bg)  !important}
+.theme-d2 {color:var(--d2-font)  !important; background-color:var(--d2-bg)  !important}
+.theme-d3 {color:var(--d3-font) !important; background-color:var(--d3-bg)  !important}
+.theme-d4 {color:var(--d4-font)  !important; background-color:var(--d4-bg)  !important}
+.theme-d5 {color:var(--d5-font) !important; background-color:var(--d5-bg)  !important}
+
+.theme-light {color:var(--l5-font)  !important; background-color:var(--l5-bg)  !important}
+.theme-dark {color:var(--d1-font) !important; background-color:var(--d1-bg)!important}
+.theme-action {color:var(--d1-font) !important; background-color:var(--d1-bg) !important}
+
+.theme {color:var(--d1-font) !important; background-color:var(--d1-bg) !important}
+.w3-text-theme {color: var(--text-font) !important}
+.w3-border-theme {border-color: var(--border-col) !important}
+
+.w3-hover-theme:hover {color: var(--hover-font) !important; background-color:var(--hover-bg)!important}
+.w3-hover-text-theme:hover {color:var(--hover-font)!important}
+.w3-hover-border-theme:hover {border-color:var(--border-col)!important}

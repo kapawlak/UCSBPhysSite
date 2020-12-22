@@ -44,7 +44,7 @@ components needed for the course.
 
 
 <div class="w3-third w3-container" style='margin-top:50px'>
-<p class="w3-border w3-padding-large w3-padding-32 w3-center"><img src='imgs/Funkit.jpg'  height='200px'></p>
+<p class="w3-border w3-padding-large w3-padding-32 w3-center"><img src='../imgs/Funkit.jpg'  height='200px'></p>
 </div>
 
 <div class="w3-twothird w3-container">
@@ -66,7 +66,7 @@ AstroAI AM33D
 
 <div class="w3-third w3-container" style='margin-top:100px'>
 <p class="w3-border w3-padding-large w3-padding-32 w3-center">
-    <img src='imgs/astroai.jpg' height='200px'></p>
+    <img src='../imgs/astroai.jpg' height='200px'></p>
 </div>
 
 
@@ -105,9 +105,9 @@ magnet wire
 
 <div class="w3-third w3-container" style='margin-top:100px'>
     <p class="w3-border w3-padding-large w3-padding-32 w3-center">
-    <img src='imgs/neomagnet.jpg' height='150px'></p>
+    <img src='../imgs/neomagnet.jpg' height='150px'></p>
     <p class="w3-border w3-padding-large w3-padding-32 w3-center">
-    <img src='imgs/MW1.jpg' height='150px'></p>
+    <img src='../imgs/MW1.jpg' height='150px'></p>
 </div>
 
 
