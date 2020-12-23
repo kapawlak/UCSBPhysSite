@@ -223,9 +223,9 @@ ul, ol {
 .Question p{
   text-align: center;
 }
-.Question ol>p{
+.Question ol>li p{
   margin-left:0px!important;
-  text-align: left;
+  text-align: left!important;
 }
 .Question::after{
   display: none;
