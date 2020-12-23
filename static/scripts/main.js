@@ -36,7 +36,7 @@ function updateRoutine() {
 function htmltweaks() {
 
   //Reset references list
-  RefList = { Eq: ['Equation'], Qu: ['Question'], Fi: ['Figure'], Si: ['Simulation'], Ex: ['Exercise'] }
+  RefList = { Eq: ['Equation'], Qu: ['Question'], Fi: ['Fig'], Si: ['Simulation'], Ex: ['Exercise'] }
 
   for (const property in RefList) {
     elist = document.getElementsByClassName(`${RefList[property]}`)
