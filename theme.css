@@ -145,7 +145,7 @@ body {
 
 /* Simulation Card */
 .Simulation{
-    background-color:var(--primary-light);
+    /* background-color:var(--primary-light); */
 }
 .Simulation .preview-hide{ /*Set the shaddow color the same*/
     --box-shadow-color: var(--primary-light)!important;

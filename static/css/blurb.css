@@ -27,6 +27,21 @@ ul, ol {
   margin: 40px 0px;
   box-shadow: 1px 1px 2px #838383;
 }
+
+@media (max-width:601px){
+  .roundbox{
+    
+    padding: 1em 0.25em;
+    margin-right: 2em;
+    
+  }
+  .roundbox, .w3-card{
+    
+
+    margin: 0em 0em;
+    
+  }
+  }
 /* Garnish formats */
 .roundbox::before, .roundbox::after{
   border-radius: 5px;
@@ -146,7 +161,11 @@ ul, ol {
 /* Simulation box formats */
 .Simulation{  
   max-width: 90%;
-  margin:30px auto;
+  /* margin:30px auto; */
+ 
+}
+.Simulation .w3-container:not(header){
+  padding: 0px 5px!important;
 }
 
 .Simulation header h3::after  {
@@ -165,7 +184,7 @@ ul, ol {
     border-radius: 5px!important;
     display: inline-block;
     min-width: 30%;
-    float: left;
+  
  }
 .Materials ul > li::before{
   content: '\f046  ';

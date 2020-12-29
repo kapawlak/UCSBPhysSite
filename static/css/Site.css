@@ -10,6 +10,12 @@ body {
     left:30px;
     width: calc( 100% - 60px);
   }
+  #mdcontent{
+    margin-top:20px;
+    margin-right:0px;
+    margin-left:5px;
+    padding: 0px 0px;
+  }
  
 }
 @media (min-width:601px){
@@ -18,6 +24,12 @@ body {
     left:30px;
     width: calc( 100% - 60px);
   }
+  #mdcontent{
+    margin-top:20px;
+    margin-right:20px;
+    margin-left:20px;
+    padding: 0px 20px;
+  }
   
 }
 @media (min-width:992px){
@@ -25,6 +37,12 @@ body {
   .tooltiptext{
     left:370px;
    width: calc( 100% - 420px);
+  }
+  #mdcontent{
+    margin-top:20px;
+    padding: 0px 20px;
+    margin-left:0px;
+    margin-right:20px
   }
  
 }
@@ -84,22 +102,8 @@ h1::before, h2::before {
 
 /* make the main paragraphs pretty */
 #mdcontent{
-    
-  margin-top:20px;
-  margin-right:20px;
-  margin-left:20px;
-  max-width: 1200px;
-  padding: 0px 20px;
-  z-index: 0!important;
- 
-}
-
-@media (min-width:993px){
-  #mdcontent{
-    margin-left:0px;
-    margin-right:20px
-    
-  }
+   max-width: 1200px;
+   z-index: 0!important;
 }
 
 #mdcontent > p{
