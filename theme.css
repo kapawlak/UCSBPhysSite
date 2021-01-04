@@ -88,6 +88,19 @@ body {
     background-attachment: fixed;
 }
 
+/*headers*/
+h1 {
+    color: var(--primary)!important;
+    font-size: 225%;
+    border-bottom: rgb(202, 201, 201) solid 1px;
+  }
+h2{
+    color: black!important;
+    font-size: 175%;
+  }
+  
+
+
 /* Maincontent background is transparent */
 #mdcontent{
     background-color: rgba(255, 255, 255, 0.75);

@@ -50,15 +50,10 @@ body {
 /* Stop images from running over sections */
 h1 {
   clear: both;
-  color: #009688!important;
-  font-size: 225%;
   padding: 20px 0px;
-  border-bottom: rgb(202, 201, 201) solid 1px;
 }
 
 h2{
-  color: black!important;
-  font-size: 175%;
   padding:70px 0px 20px 0px; 
   margin-left: 20px;
   margin-top:-50px;
