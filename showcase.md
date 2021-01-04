@@ -58,11 +58,11 @@ Figures and generally contain images. They are automatically numbered, nameable 
 
 ``` 
 ::: Figure optional-name optional-size
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 :::
 ``` 
 ::: Figure balls 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 :::
 
 To improve visual variety you can also make right and left floating figures, respectively. These will float to the right(left) of any text that *follows* it.
@@ -125,12 +125,12 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 
 ```
 ::: Figure ball-o 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 **Original**
 :::
 ```
 ::: Figure ball-o 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **Original**
 :::
@@ -140,7 +140,7 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 
 ```
 ::: Figure ball-xs xs 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **xs**
 :::
@@ -148,7 +148,7 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 ```
 
 ::: Figure ball-xs xs 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **xs**
 :::
@@ -157,14 +157,14 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 
 ```
 ::: Figure ball-s s 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **s**
 :::
 ```
 
 ::: Figure ball-s s 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **s**
 :::
@@ -172,7 +172,7 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 ---
 ```
 ::: Figure ball-m m 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **m**
 :::
@@ -180,7 +180,7 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 ```
 
 ::: Figure ball-m m 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **m**
 :::
@@ -189,13 +189,13 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 
 ```
 ::: Figure ball-l l 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **l**
 :::
 ```
 ::: Figure ball-l l 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **l**
 :::
@@ -204,14 +204,14 @@ To ensure that Figures look nice on large screens, one can specify a maximum siz
 ```
 
 ::: Figure ball-xl xl 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **xl**
 :::
 ```
 
 ::: Figure ball-xl xl 
-![This is an image](..\imgs\Balls2.png)
+![This is an image](../imgs/Balls2.png)
 
 **xl**
 :::
