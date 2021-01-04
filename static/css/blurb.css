@@ -497,18 +497,18 @@ ul, ol {
 }
 
  .xs img{
-  max-width:10em;
-  max-height:10em;
+  max-width:5em;
+  max-height:5em;
  }
  
 .s img{
-  max-width:15em;
-  max-height:15em;
+  max-width:10em;
+  max-height:10em;
   }
 
 .m img{
-  max-width:20em;
-  max-height:20em;
+  max-width:15em;
+  max-height:15em;
 }
 
 .l img{
