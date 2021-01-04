@@ -495,6 +495,10 @@ ul, ol {
 .RFigure img, .LFigure img{
   display: block;
 }
+.xxs img{
+  max-width:2.5em;
+  max-height:2.5em;
+ }
 
  .xs img{
   max-width:5em;
