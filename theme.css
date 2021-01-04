@@ -98,7 +98,10 @@ h2{
     color: black!important;
     font-size: 175%;
   }
-  
+/*sidebar buttons*/
+#collapsible {
+    background-color:var(--primary)!important;
+}
 
 
 /* Maincontent background is transparent */
