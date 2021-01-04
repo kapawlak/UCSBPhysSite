@@ -222,15 +222,15 @@ ul, ol {
 /*********************************************************************************/
 /* Question box formats */
 .Question{
-  background-color: #009688!important;
+  background-color: #009688;
   color: white;
  }
 .Question::before {
   counter-increment: question;
   content: "Question "  counter(question);
-  background-color:#4fa199!important;
+  background-color:#4fa199;
   position: absolute;
-  top: -1em;
+  top: -0.5em;
   left:calc(50% - 3.6em); 
 }
 .Question ol{ 

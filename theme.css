@@ -8,6 +8,7 @@ body{
     --primary-font:#fff;
     --primary-light:#c0e7df;
     --primary-light-font:#000;
+    --primary-med:#4fa199;
     --primary-dark:#326964;
     --primary-dark-font:#fff;
 
@@ -126,6 +127,16 @@ body {
     background-color:var(--l3-bg)!important;
     color:var(--l3-font);   
 } 
+
+.Question{
+    background-color: var(--primary)!important;
+    color: white;
+   }
+  .Question::before {
+
+    background-color:var(--primary-med)!important;
+
+  }
 
 /*********************************************************************************/
 /* Card Settings */
