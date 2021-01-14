@@ -478,9 +478,9 @@ text-align: center;
   max-width:100%;
   /* Position the tooltip text */
   position:fixed;
-  bottom: 5px;
+  bottom: -500px;
   opacity: 0;
-  transition: opacity 5s ease;
+  transition: all 5s ease;
   border: black 8px solid;
   text-indent: 0;
 }
@@ -489,6 +489,7 @@ text-align: center;
 .tooltip:hover .tooltiptext {
   opacity: 1;
   display: block;
+  bottom:5px;
   transition: opacity 1s ease;
   z-index:2;
 }
