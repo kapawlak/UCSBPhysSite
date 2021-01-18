@@ -335,6 +335,9 @@ ul, ol {
   font-weight: normal!important;
   font-size: 100%!important;
 }
+.Hider header{
+  border-bottom: white 2px solid;
+}
 
 .Hider .slideopen{
   max-height:0px;
