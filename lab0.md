@@ -22,6 +22,10 @@ Phyphox allows you to use the sensors in your phone to measure quantities such a
 
 You are encouraged to play with phyphox,  explore its capabilities and experiment ideas on the website, and take creative license to your investigations throughout the course. The instructions provided in each lab can be seen as a "minimum" requirement -- the features of phyphox go far beyond these suggestions
 
+
+1. list item [fn] list item [/fn].
+2. list item [fn] list item [/fn].
+3. list item [fn] list item [/fn].
 # Experiments
 ## 1. Overview
 In this lab, we will get familiar with phyphox by investigating the external magnetic field of a magnet. Our first step will be to find the location of the magnetometer on your phone. It's crucial to know where the sensor is before making a measurement. Feel free to mark the true location for future labs.
