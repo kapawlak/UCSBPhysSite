@@ -498,32 +498,32 @@ ul, ol {
 .RFigure img, .LFigure img{
   display: block;
 }
-.xxs img{
+.xxs img, .xxs p{
   max-width:2.5em;
   max-height:2.5em;
  }
 
- .xs img{
-  max-width:5em;
-  max-height:5em;
- }
- 
-.s img{
+ .xs img, .xs p{
   max-width:10em;
   max-height:10em;
-  }
-
-.m img{
+ }
+ 
+.s img, .s p{
   max-width:15em;
   max-height:15em;
+  }
+
+.m img, .m p{
+  max-width:20em;
+  max-height:20em;
 }
 
-.l img{
+.l img, .l p{
   max-width:25em;
   max-height:25em;
 }
 
-.xl img{
+.xl img, .xl p{
   max-width:40em;
   max-height:40em;
 }
