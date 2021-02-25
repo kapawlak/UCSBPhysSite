@@ -110,6 +110,30 @@ function figurecard(tokens, idx, regmatch, type) {
     }
 }
 
+//Video with labels
+
+function vid(tokens, idx) {
+    var LTR = "Vi"
+    var m = tokens[idx].info.trim().match(/^Video(.*)$/);
+
+    if (tokens[idx].nesting === 1) {
+        // This places an opening tag
+        label = md.utils.escapeHtml(m[1]).trim().split(' ')[0]
+        size = md.utils.escapeHtml(m[1]).trim().split(' ')[1]
+        if (label == '') {
+            label = 'unset_' + unset_id
+            unset_id++;
+        }
+        return dv(['w3-row', 'w3-center'], id= LTR + "-" + label)
+                + dv(['w3-card', 'Video'], id= LTR + "_" + label) + '<header class="w3-container"> <h3> Video </h3></header>' + dv(["w3-container"]);
+
+    } else {
+        // This places a closing tag
+        return '</div></div></div>'
+    }
+}
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Short Blurbs
@@ -199,17 +223,10 @@ md.use(container, 'LFigure', {
 
 md.use(container, 'Video', {
     render: function (tokens, idx) {
-        if (tokens[idx].nesting === 1) {
-            // This places an opening tag
-            return dv(['w3-row', 'w3-center']) +
-                dv(['w3-card', 'Video']) + '<header class="w3-container"> <h3> Video </h3></header>' + dv(["w3-container"]);
-
-        } else {
-            // This places a closing tag
-            return '</div></div></div>'
-        }
+        return vid(tokens, idx)
     }
 })
+
 md.use(container, 'Materials', {
     render: function (tokens, idx) {
         if (tokens[idx].nesting === 1) {
